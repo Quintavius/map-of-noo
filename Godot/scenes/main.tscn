@@ -1,0 +1,102 @@
+[gd_scene load_steps=12 format=3 uid="uid://icxg80kr7xoy"]
+
+[ext_resource type="Shader" uid="uid://c02kgwblpfv05" path="res://shaders/map.tres" id="1_5idcf"]
+[ext_resource type="Script" path="res://scenes/Map.gd" id="1_lp277"]
+[ext_resource type="Gradient" uid="uid://da5i6twl3bgt" path="res://scenes/TestGradient.tres" id="3_320t8"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_80u1v"]
+gradient = ExtResource("3_320t8")
+
+[sub_resource type="Gradient" id="Gradient_y6ajm"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.559472, 0.861084, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.565299, 0.565299, 0.565299, 1, 0.840698, 0.840698, 0.840698, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_208cu"]
+gradient = SubResource("Gradient_y6ajm")
+width = 512
+height = 512
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0ij46"]
+noise_type = 5
+frequency = 0.0278
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_onvdb"]
+noise = SubResource("FastNoiseLite_0ij46")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_l1tvh"]
+noise_type = 2
+frequency = 0.0137
+domain_warp_enabled = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_mh7fa"]
+width = 16
+height = 16
+noise = SubResource("FastNoiseLite_l1tvh")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yovxb"]
+shader = ExtResource("1_5idcf")
+shader_parameter/ShiftNoiseStrength = 0.041
+shader_parameter/Cycle = 10.0
+shader_parameter/ShiftNoise = SubResource("NoiseTexture2D_onvdb")
+shader_parameter/ShiftMap = SubResource("GradientTexture2D_208cu")
+shader_parameter/TerrainNoise = SubResource("NoiseTexture2D_mh7fa")
+shader_parameter/Gradient = SubResource("GradientTexture1D_80u1v")
+
+[node name="Main" type="Node"]
+
+[node name="Map" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lp277")
+
+[node name="ColorRect" type="ColorRect" parent="Map"]
+material = SubResource("ShaderMaterial_yovxb")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -450.0
+offset_right = 450.0
+offset_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HSlider" type="HSlider" parent="Map"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -367.0
+offset_top = 447.0
+offset_right = -222.0
+offset_bottom = 524.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5.224, 5.224)
+max_value = 30.0
+step = 0.01
+
+[node name="CharacterScreen" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="value_changed" from="Map/HSlider" to="Map" method="_on_h_slider_value_changed"]

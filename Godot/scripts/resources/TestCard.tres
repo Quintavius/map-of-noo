@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://baj0ffvauo016"]
+
+[ext_resource type="Script" path="res://scripts/resources/Item.gd" id="1_xnkah"]
+
+[resource]
+script = ExtResource("1_xnkah")
+Category = ""
+name = ""
+artist = ""
+image_url = ""
