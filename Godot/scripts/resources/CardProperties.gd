@@ -1,14 +1,20 @@
 extends Node
 class_name CardProperties 
 
-const Cultures : Dictionary = {"Aether Mafia":"soar-mafia guild-noir"}
+enum DiceClass{Light, Medium, Heavy}
 
-enum ItemTypes{
-	Weapon,
-	Attire,
-	Trap,
-	Consumable,
-	Treasure
+enum Culture{
+	AetherMafia
 }
 
-const Artists : Dictionary = {"Aaron Limhop" : "Juxtapoz dark art, subsurface scattering, by Maya Hayuk, bloom, maximalist, by Sebastian Schrader"}
+const Cultures : Dictionary = {
+	Culture.AetherMafia : {"name": "Aether Mafia", "value": "soar-mafia guild-noir"}
+}
+
+enum Artist{
+	AaronLimhop
+}
+
+const Artists : Dictionary = {
+	Artist.AaronLimhop : {"name": "Aaron Limhop", "value": "Juxtapoz dark art, subsurface scattering, by Maya Hayuk, bloom, maximalist, by Sebastian Schrader"}
+	}
