@@ -5,6 +5,9 @@
 [resource]
 script = ExtResource("1_xnkah")
 Category = ""
+Subcategory = ""
+Dice = 2
 name = ""
 artist = ""
+description = ""
 image_url = ""
