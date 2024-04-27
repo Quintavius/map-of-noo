@@ -13,5 +13,5 @@ func _process(delta):
 	pass
 
 func _on_h_slider_value_changed(value):
-	$ColorRect.material.set("shader_parameter/Cycle", value)
+	$MapBase.material.set("shader_parameter/Cycle", value)
 	pass # Replace with function body.

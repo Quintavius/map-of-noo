@@ -1,11 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://icxg80kr7xoy"]
+[gd_scene load_steps=20 format=3 uid="uid://icxg80kr7xoy"]
 
 [ext_resource type="Shader" uid="uid://c02kgwblpfv05" path="res://shaders/map.tres" id="1_5idcf"]
 [ext_resource type="Script" path="res://scenes/Map.gd" id="1_lp277"]
-[ext_resource type="Gradient" uid="uid://da5i6twl3bgt" path="res://scenes/TestGradient.tres" id="3_320t8"]
+[ext_resource type="Shader" path="res://shaders/BlurX.gdshader" id="4_aajak"]
+[ext_resource type="Shader" path="res://shaders/BlurY.gdshader" id="4_s8w7f"]
+[ext_resource type="Shader" path="res://shaders/ColourRamp.gdshader" id="6_hpcjg"]
+
+[sub_resource type="Gradient" id="Gradient_m103y"]
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_80u1v"]
-gradient = ExtResource("3_320t8")
+gradient = SubResource("Gradient_m103y")
 
 [sub_resource type="Gradient" id="Gradient_y6ajm"]
 interpolation_mode = 1
@@ -25,6 +29,8 @@ noise_type = 5
 frequency = 0.0278
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_onvdb"]
+width = 1024
+height = 1024
 noise = SubResource("FastNoiseLite_0ij46")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_l1tvh"]
@@ -33,8 +39,6 @@ frequency = 0.0137
 domain_warp_enabled = true
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_mh7fa"]
-width = 16
-height = 16
 noise = SubResource("FastNoiseLite_l1tvh")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yovxb"]
@@ -45,6 +49,24 @@ shader_parameter/ShiftNoise = SubResource("NoiseTexture2D_onvdb")
 shader_parameter/ShiftMap = SubResource("GradientTexture2D_208cu")
 shader_parameter/TerrainNoise = SubResource("NoiseTexture2D_mh7fa")
 shader_parameter/Gradient = SubResource("GradientTexture1D_80u1v")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lra7u"]
+shader = ExtResource("4_s8w7f")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sr2ak"]
+shader = ExtResource("4_aajak")
+
+[sub_resource type="Gradient" id="Gradient_dleve"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.327869, 0.434426, 1)
+colors = PackedColorArray(0.297385, 0.429019, 0.297711, 1, 0.475114, 0.684483, 0.40456, 1, 0.350662, 0.577665, 0.282905, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fnrem"]
+gradient = SubResource("Gradient_dleve")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_84kjd"]
+shader = ExtResource("6_hpcjg")
+shader_parameter/gradient_texture = SubResource("GradientTexture1D_fnrem")
 
 [node name="Main" type="Node"]
 
@@ -57,7 +79,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lp277")
 
-[node name="ColorRect" type="ColorRect" parent="Map"]
+[node name="MapBase" type="ColorRect" parent="Map"]
+clip_children = 2
 material = SubResource("ShaderMaterial_yovxb")
 layout_mode = 1
 anchors_preset = 8
@@ -71,6 +94,63 @@ offset_right = 450.0
 offset_bottom = 450.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PostProcessing" type="Control" parent="Map/MapBase"]
+anchors_preset = 0
+offset_left = -90.0
+offset_top = -510.0
+offset_right = -50.0
+offset_bottom = -470.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Map/MapBase/PostProcessing"]
+
+[node name="ColorRect" type="ColorRect" parent="Map/MapBase/PostProcessing/CanvasLayer"]
+material = SubResource("ShaderMaterial_lra7u")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -450.0
+offset_right = 450.0
+offset_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="Map/MapBase/PostProcessing"]
+
+[node name="ColorRect" type="ColorRect" parent="Map/MapBase/PostProcessing/CanvasLayer2"]
+material = SubResource("ShaderMaterial_sr2ak")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -450.0
+offset_right = 450.0
+offset_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="Map/MapBase/PostProcessing"]
+
+[node name="ColorRect" type="ColorRect" parent="Map/MapBase/PostProcessing/CanvasLayer3"]
+material = SubResource("ShaderMaterial_84kjd")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 90.0
+offset_top = 510.0
+offset_right = -90.0
+offset_bottom = -510.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="HSlider" type="HSlider" parent="Map"]
