@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://scripts/resources/CardRenderer.gd" id="6_luaf0"]
 [ext_resource type="Theme" uid="uid://cvsrecu06my7j" path="res://theme.tres" id="6_se7d4"]
 [ext_resource type="Resource" uid="uid://baj0ffvauo016" path="res://cards/items/TestCard.tres" id="7_40afh"]
-[ext_resource type="Texture2D" uid="uid://dne3cdb2htpli" path="res://assets/card_art/items/deepsea_vision_goggles.webp" id="8_ym3ou"]
+[ext_resource type="Texture2D" uid="uid://g3w8f6ks52h3" path="res://assets/card_art/items/default_item.webp" id="8_3qhvi"]
 
 [sub_resource type="Gradient" id="Gradient_m103y"]
 
@@ -210,7 +210,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("8_ym3ou")
+texture = ExtResource("8_3qhvi")
 expand_mode = 1
 stretch_mode = 5
 
