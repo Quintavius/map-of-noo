@@ -1,4 +1,4 @@
-extends Card
+class_name Item extends Card
 
 @export var item_type : ItemProperties.ItemType 
 @export var Subcategory : String

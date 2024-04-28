@@ -5,7 +5,7 @@
 [ext_resource type="Shader" path="res://shaders/BlurX.gdshader" id="4_aajak"]
 [ext_resource type="Shader" path="res://shaders/BlurY.gdshader" id="4_s8w7f"]
 [ext_resource type="Shader" path="res://shaders/ColourRamp.gdshader" id="6_hpcjg"]
-[ext_resource type="Script" path="res://scenes/ItemCard.gd" id="6_luaf0"]
+[ext_resource type="Script" path="res://scenes/CardRenderer.gd" id="6_luaf0"]
 [ext_resource type="Theme" uid="uid://cvsrecu06my7j" path="res://theme.tres" id="6_se7d4"]
 
 [sub_resource type="Gradient" id="Gradient_m103y"]
