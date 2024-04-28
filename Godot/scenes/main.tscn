@@ -1,12 +1,14 @@
-[gd_scene load_steps=22 format=3 uid="uid://icxg80kr7xoy"]
+[gd_scene load_steps=24 format=3 uid="uid://icxg80kr7xoy"]
 
 [ext_resource type="Shader" uid="uid://c02kgwblpfv05" path="res://shaders/map.tres" id="1_5idcf"]
-[ext_resource type="Script" path="res://scenes/Map.gd" id="1_lp277"]
+[ext_resource type="Script" path="res://scripts/Map.gd" id="1_lp277"]
 [ext_resource type="Shader" path="res://shaders/BlurX.gdshader" id="4_aajak"]
 [ext_resource type="Shader" path="res://shaders/BlurY.gdshader" id="4_s8w7f"]
 [ext_resource type="Shader" path="res://shaders/ColourRamp.gdshader" id="6_hpcjg"]
-[ext_resource type="Script" path="res://scenes/CardRenderer.gd" id="6_luaf0"]
+[ext_resource type="Script" path="res://scripts/resources/CardRenderer.gd" id="6_luaf0"]
 [ext_resource type="Theme" uid="uid://cvsrecu06my7j" path="res://theme.tres" id="6_se7d4"]
+[ext_resource type="Resource" uid="uid://baj0ffvauo016" path="res://cards/items/TestCard.tres" id="7_40afh"]
+[ext_resource type="Texture2D" uid="uid://dne3cdb2htpli" path="res://assets/card_art/items/deepsea_vision_goggles.webp" id="8_ym3ou"]
 
 [sub_resource type="Gradient" id="Gradient_m103y"]
 
@@ -190,6 +192,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_luaf0")
+test_data = ExtResource("7_40afh")
 
 [node name="ColorRect" type="ColorRect" parent="ItemCard"]
 layout_mode = 1
@@ -198,7 +201,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.136826, 0.136826, 0.136826, 1)
+color = Color(0, 0, 0, 1)
+
+[node name="Image" type="TextureRect" parent="ItemCard"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_ym3ou")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Name" type="Label" parent="ItemCard"]
 layout_mode = 0
@@ -215,5 +229,6 @@ offset_right = 559.0
 offset_bottom = 1298.0
 theme = ExtResource("6_se7d4")
 text = "Description"
+autowrap_mode = 2
 
 [connection signal="value_changed" from="Map/HSlider" to="Map" method="_on_h_slider_value_changed"]

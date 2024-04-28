@@ -1,6 +1,17 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://baj0ffvauo016"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://baj0ffvauo016"]
 
 [ext_resource type="Script" path="res://scripts/resources/Item.gd" id="1_xnkah"]
+[ext_resource type="Texture2D" uid="uid://dne3cdb2htpli" path="res://assets/card_art/items/deepsea_vision_goggles.webp" id="1_y45bv"]
 
 [resource]
 script = ExtResource("1_xnkah")
+item_type = 0
+Subcategory = ""
+Dice = 0
+name = "Deepsea Vision Goggles"
+culture = 0
+artist = 0
+description = "Cobbled together from the gear of dead descenders."
+effect = ""
+image = ExtResource("1_y45bv")
+legendary = false

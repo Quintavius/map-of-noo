@@ -6,5 +6,5 @@ class_name Card
 @export var artist : CardProperties.Artist
 @export var description : String
 @export var effect : String
-@export var image_url : String
+@export var image : Texture2D
 @export var legendary : bool
