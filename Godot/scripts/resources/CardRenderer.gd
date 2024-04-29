@@ -19,13 +19,13 @@ func render_card(card_data : Variant):
 func _ready():
 	render_card(test_data)
 	
-	var http_request = HTTPRequest.new()
-	add_child(http_request)
-	http_request.request_completed.connect(self._http_request_completed)
+	#var http_request = HTTPRequest.new()
+	#add_child(http_request)
+	#http_request.request_completed.connect(self._http_request_completed)
 	
-	var error = http_request.request("https://cdn.discordapp.com/attachments/1133230663596777576/1234091530596126720/scringlescrongle_a_mid-thirties_crusty_troll_in_a_mossy_cellar_d8b3983a-7312-434e-845d-79b896af8bb1.png")
-	if error != OK:
-		push_error("bad request")
+	#var error = http_request.request("https://cdn.discordapp.com/attachments/1133230663596777576/1234091530596126720/scringlescrongle_a_mid-thirties_crusty_troll_in_a_mossy_cellar_d8b3983a-7312-434e-845d-79b896af8bb1.png")
+	#if error != OK:
+	#	push_error("bad request")
 
 func _http_request_completed(result, response_code, headers, body):
 	if result != HTTPRequest.RESULT_SUCCESS:
