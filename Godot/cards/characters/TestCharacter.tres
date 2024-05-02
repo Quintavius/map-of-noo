@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Character" load_steps=2 format=3 uid="uid://h1slxnjh5ct4"]
+
+[ext_resource type="Script" path="res://scripts/resources/Character.gd" id="1_ox6kr"]
+
+[resource]
+script = ExtResource("1_ox6kr")
+species = 0
+inventory = Array[Resource("res://scripts/resources/Item.gd")]([])
+accessories = Array[Resource("res://scripts/resources/Item.gd")]([])
+state = 0
+brains = {
+"experience": 0,
+"level": 0
+}
+brawn = 0
+tongue = 0
+hands = 0
+skin = 0
+attack = 0
+defense = 0
+dreamwalking = Array[int]([])

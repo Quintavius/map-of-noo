@@ -4,4 +4,4 @@ class_name Session extends Resource
 @export var current_deck : Deck
 @export var items_on_table : Array[Card]
 @export var actors_on_table : Array[Card]
-@export var current_terrain
+@export var current_terrain : Card

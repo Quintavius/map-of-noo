@@ -18,3 +18,7 @@ enum Artist{
 const Artists : Dictionary = {
 	Artist.AaronLimhop : {"name": "Aaron Limhop", "value": "Juxtapoz dark art, subsurface scattering, by Maya Hayuk, bloom, maximalist, by Sebastian Schrader"}
 	}
+
+enum DreamwalkingSchools {
+	Nuclear
+}
