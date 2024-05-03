@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://icxg80kr7xoy"]
+[gd_scene load_steps=26 format=3 uid="uid://icxg80kr7xoy"]
 
 [ext_resource type="Shader" uid="uid://c02kgwblpfv05" path="res://shaders/map.tres" id="1_5idcf"]
 [ext_resource type="Script" path="res://scripts/Map.gd" id="1_lp277"]
@@ -9,6 +9,8 @@
 [ext_resource type="Theme" uid="uid://cvsrecu06my7j" path="res://theme.tres" id="6_se7d4"]
 [ext_resource type="Resource" uid="uid://baj0ffvauo016" path="res://cards/items/TestCard.tres" id="7_40afh"]
 [ext_resource type="Texture2D" uid="uid://g3w8f6ks52h3" path="res://assets/card_art/items/default_item.webp" id="8_3qhvi"]
+[ext_resource type="Script" path="res://scripts/resources/SessionManager.gd" id="10_tsny2"]
+[ext_resource type="Script" path="res://scripts/resources/DeckManager.gd" id="11_0bixo"]
 
 [sub_resource type="Gradient" id="Gradient_m103y"]
 
@@ -184,51 +186,113 @@ scale = Vector2(5.224, 5.224)
 max_value = 30.0
 step = 0.01
 
-[node name="ItemCard" type="Control" parent="."]
-layout_mode = 3
+[node name="ItemCard" type="CenterContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 138.0
+offset_top = 266.0
+offset_right = -120.0
+offset_bottom = -532.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_luaf0")
 test_data = ExtResource("7_40afh")
 
-[node name="ColorRect" type="ColorRect" parent="ItemCard"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Bleed" type="ColorRect" parent="ItemCard"]
+visible = false
+custom_minimum_size = Vector2(822, 1122)
+layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Image" type="TextureRect" parent="ItemCard"]
+[node name="DecoBleed" type="Panel" parent="ItemCard"]
+custom_minimum_size = Vector2(750, 1050)
+layout_mode = 2
+theme = ExtResource("6_se7d4")
+
+[node name="ImageMask" type="Panel" parent="ItemCard"]
+clip_children = 1
+custom_minimum_size = Vector2(690, 990)
+layout_mode = 2
+theme = ExtResource("6_se7d4")
+
+[node name="Image" type="TextureRect" parent="ItemCard/ImageMask"]
+custom_minimum_size = Vector2(690, 990)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("6_se7d4")
 texture = ExtResource("8_3qhvi")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Name" type="Label" parent="ItemCard"]
-layout_mode = 0
-offset_right = 513.0
-offset_bottom = 161.0
-theme = ExtResource("6_se7d4")
-text = "Name"
-
 [node name="Description" type="Label" parent="ItemCard"]
-layout_mode = 0
-offset_left = 46.0
-offset_top = 1137.0
-offset_right = 559.0
-offset_bottom = 1298.0
+layout_mode = 2
 theme = ExtResource("6_se7d4")
 text = "Description"
 autowrap_mode = 2
+
+[node name="CardContents" type="Container" parent="ItemCard"]
+custom_minimum_size = Vector2(660, 960)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="ItemCard/CardContents"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="ItemCard/CardContents/Panel"]
+layout_mode = 2
+offset_left = 193.0
+offset_top = 415.0
+offset_right = 466.0
+offset_bottom = 544.0
+theme = ExtResource("6_se7d4")
+text = "Name"
+
+[node name="SessionManager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("10_tsny2")
+
+[node name="DeckManager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_0bixo")
+
+[node name="ItemManager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CharacterManager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CreatureManager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TerrainManager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayerManager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="value_changed" from="Map/HSlider" to="Map" method="_on_h_slider_value_changed"]

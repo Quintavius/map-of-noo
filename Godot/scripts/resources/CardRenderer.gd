@@ -6,7 +6,7 @@ extends Control
 func render_card(card_data : Variant):
 	# Common
 	$Name.text = card_data.name
-	$Image.texture = card_data.image
+	#$Image.texture = card_data.image
 	$Description.text = card_data.description
 	
 	# Specific 

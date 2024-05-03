@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Character" load_steps=2 format=3 uid="uid://h1slxnjh5ct4"]
+[gd_resource type="Resource" script_class="Character" load_steps=2 format=3 uid="uid://vp38fc1e2int"]
 
 [ext_resource type="Script" path="res://scripts/resources/Character.gd" id="1_ox6kr"]
 
@@ -12,10 +12,28 @@ brains = {
 "experience": 0,
 "level": 0
 }
-brawn = 0
-tongue = 0
-hands = 0
-skin = 0
+brawn = {
+"experience": 0,
+"level": 0
+}
+tongue = {
+"experience": 0,
+"level": 0
+}
+hands = {
+"experience": 0,
+"level": 0
+}
+skin = {
+"experience": 0,
+"level": 0
+}
 attack = 0
 defense = 0
 dreamwalking = Array[int]([])
+name = ""
+culture = 0
+artist = 0
+description = ""
+effect = ""
+legendary = false

@@ -1,4 +1,7 @@
-[gd_resource type="Theme" format=3 uid="uid://cvsrecu06my7j"]
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cvsrecu06my7j"]
+
+[ext_resource type="StyleBox" uid="uid://chfhi4nnb5omy" path="res://assets/rounded_corners_box.tres" id="1_u5yk0"]
 
 [resource]
 Label/font_sizes/font_size = 94
+Panel/styles/panel = ExtResource("1_u5yk0")
