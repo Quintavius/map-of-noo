@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://icxg80kr7xoy"]
+[gd_scene load_steps=28 format=3 uid="uid://icxg80kr7xoy"]
 
 [ext_resource type="Shader" uid="uid://c02kgwblpfv05" path="res://shaders/map.tres" id="1_5idcf"]
 [ext_resource type="Script" path="res://scripts/Map.gd" id="1_lp277"]
@@ -9,6 +9,7 @@
 [ext_resource type="Theme" uid="uid://cvsrecu06my7j" path="res://theme.tres" id="6_se7d4"]
 [ext_resource type="Resource" uid="uid://baj0ffvauo016" path="res://cards/items/TestCard.tres" id="7_40afh"]
 [ext_resource type="Texture2D" uid="uid://g3w8f6ks52h3" path="res://assets/card_art/items/default_item.webp" id="8_3qhvi"]
+[ext_resource type="FontFile" uid="uid://bibureihbtoeq" path="res://fonts/HyperScrypt.otf" id="10_ojw4r"]
 [ext_resource type="Script" path="res://scripts/resources/SessionManager.gd" id="10_tsny2"]
 [ext_resource type="Script" path="res://scripts/resources/DeckManager.gd" id="11_0bixo"]
 
@@ -73,6 +74,9 @@ gradient = SubResource("Gradient_dleve")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_84kjd"]
 shader = ExtResource("6_hpcjg")
 shader_parameter/gradient_texture = SubResource("GradientTexture1D_fnrem")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_25e6u"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="Main" type="Node"]
 
@@ -230,6 +234,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="Description" type="Label" parent="ItemCard"]
+visible = false
 layout_mode = 2
 theme = ExtResource("6_se7d4")
 text = "Description"
@@ -239,16 +244,14 @@ autowrap_mode = 2
 custom_minimum_size = Vector2(660, 960)
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="ItemCard/CardContents"]
+[node name="Panel" type="PanelContainer" parent="ItemCard/CardContents"]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_25e6u")
 
 [node name="Name" type="Label" parent="ItemCard/CardContents/Panel"]
 layout_mode = 2
-offset_left = 193.0
-offset_top = 415.0
-offset_right = 466.0
-offset_bottom = 544.0
 theme = ExtResource("6_se7d4")
+theme_override_fonts/font = ExtResource("10_ojw4r")
 text = "Name"
 
 [node name="SessionManager" type="Control" parent="."]
