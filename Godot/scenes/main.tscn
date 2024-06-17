@@ -9,7 +9,7 @@
 [ext_resource type="Theme" uid="uid://cvsrecu06my7j" path="res://theme.tres" id="6_se7d4"]
 [ext_resource type="Resource" uid="uid://baj0ffvauo016" path="res://cards/items/TestCard.tres" id="7_40afh"]
 [ext_resource type="Texture2D" uid="uid://g3w8f6ks52h3" path="res://assets/card_art/items/default_item.webp" id="8_3qhvi"]
-[ext_resource type="FontFile" uid="uid://c7f5og12koia3" path="res://fonts/BackOut.otf" id="10_2jn6d"]
+[ext_resource type="FontFile" uid="uid://byuuqiev07uoa" path="res://fonts/DarksameRegular.ttf" id="10_ogbm8"]
 [ext_resource type="Script" path="res://scripts/resources/SessionManager.gd" id="10_tsny2"]
 [ext_resource type="Script" path="res://scripts/resources/DeckManager.gd" id="11_0bixo"]
 
@@ -251,8 +251,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_25e6u")
 [node name="Name" type="Label" parent="ItemCard/CardContents/Panel"]
 layout_mode = 2
 theme = ExtResource("6_se7d4")
-theme_override_fonts/font = ExtResource("10_2jn6d")
-text = "Name"
+theme_override_fonts/font = ExtResource("10_ogbm8")
+theme_override_font_sizes/font_size = 56
+text = "Default Sword"
 
 [node name="SessionManager" type="Control" parent="."]
 layout_mode = 3
