@@ -9,6 +9,7 @@
 [ext_resource type="Theme" uid="uid://cvsrecu06my7j" path="res://theme.tres" id="6_se7d4"]
 [ext_resource type="Resource" uid="uid://baj0ffvauo016" path="res://cards/items/TestCard.tres" id="7_40afh"]
 [ext_resource type="Texture2D" uid="uid://g3w8f6ks52h3" path="res://assets/card_art/items/default_item.webp" id="8_3qhvi"]
+[ext_resource type="Texture2D" uid="uid://ls47ulesl5x2" path="res://assets/interface/borders/Double/Transparent center/panel-transparent-center-011.png" id="10_4r840"]
 [ext_resource type="FontFile" uid="uid://byuuqiev07uoa" path="res://fonts/DarksameRegular.ttf" id="10_ogbm8"]
 [ext_resource type="Script" path="res://scripts/resources/SessionManager.gd" id="10_tsny2"]
 [ext_resource type="Script" path="res://scripts/resources/DeckManager.gd" id="11_0bixo"]
@@ -74,9 +75,6 @@ gradient = SubResource("Gradient_dleve")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_84kjd"]
 shader = ExtResource("6_hpcjg")
 shader_parameter/gradient_texture = SubResource("GradientTexture1D_fnrem")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_25e6u"]
-bg_color = Color(0, 0, 0, 1)
 
 [node name="Main" type="Node"]
 
@@ -190,71 +188,6 @@ scale = Vector2(5.224, 5.224)
 max_value = 30.0
 step = 0.01
 
-[node name="ItemCard" type="CenterContainer" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 138.0
-offset_top = 266.0
-offset_right = -120.0
-offset_bottom = -532.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("6_luaf0")
-test_data = ExtResource("7_40afh")
-
-[node name="Bleed" type="ColorRect" parent="ItemCard"]
-visible = false
-custom_minimum_size = Vector2(822, 1122)
-layout_mode = 2
-color = Color(0, 0, 0, 1)
-
-[node name="DecoBleed" type="Panel" parent="ItemCard"]
-custom_minimum_size = Vector2(750, 1050)
-layout_mode = 2
-theme = ExtResource("6_se7d4")
-
-[node name="ImageMask" type="Panel" parent="ItemCard"]
-clip_children = 1
-custom_minimum_size = Vector2(690, 990)
-layout_mode = 2
-theme = ExtResource("6_se7d4")
-
-[node name="Image" type="TextureRect" parent="ItemCard/ImageMask"]
-custom_minimum_size = Vector2(690, 990)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("6_se7d4")
-texture = ExtResource("8_3qhvi")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Description" type="Label" parent="ItemCard"]
-visible = false
-layout_mode = 2
-theme = ExtResource("6_se7d4")
-text = "Description"
-autowrap_mode = 2
-
-[node name="CardContents" type="Container" parent="ItemCard"]
-custom_minimum_size = Vector2(660, 960)
-layout_mode = 2
-
-[node name="Panel" type="PanelContainer" parent="ItemCard/CardContents"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_25e6u")
-
-[node name="Name" type="Label" parent="ItemCard/CardContents/Panel"]
-layout_mode = 2
-theme = ExtResource("6_se7d4")
-theme_override_fonts/font = ExtResource("10_ogbm8")
-theme_override_font_sizes/font_size = 56
-text = "Default Sword"
-
 [node name="SessionManager" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -298,5 +231,112 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -375.0
+offset_top = -525.0
+offset_right = 375.0
+offset_bottom = 525.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Images" type="CenterContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -375.0
+offset_top = -525.0
+offset_right = 375.0
+offset_bottom = 525.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_luaf0")
+test_data = ExtResource("7_40afh")
+
+[node name="Bleed" type="ColorRect" parent="Control/Images"]
+visible = false
+custom_minimum_size = Vector2(822, 1122)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="DecoBleed" type="Panel" parent="Control/Images"]
+custom_minimum_size = Vector2(750, 1050)
+layout_mode = 2
+theme = ExtResource("6_se7d4")
+
+[node name="ImageMask" type="Panel" parent="Control/Images"]
+clip_children = 1
+custom_minimum_size = Vector2(690, 990)
+layout_mode = 2
+theme = ExtResource("6_se7d4")
+
+[node name="Image" type="TextureRect" parent="Control/Images/ImageMask"]
+custom_minimum_size = Vector2(690, 990)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_se7d4")
+texture = ExtResource("8_3qhvi")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Description" type="Label" parent="Control/Images"]
+visible = false
+layout_mode = 2
+theme = ExtResource("6_se7d4")
+text = "Description"
+autowrap_mode = 2
+
+[node name="Panel" type="NinePatchRect" parent="Control"]
+texture_filter = 1
+custom_minimum_size = Vector2(30, 60)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -154.0
+offset_top = 50.0
+offset_right = 218.0
+offset_bottom = 261.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("10_4r840")
+region_rect = Rect2(1, 0, 94, 96)
+patch_margin_left = 24
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 24
+
+[node name="Name" type="Label" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -207.0
+offset_top = -44.0
+offset_right = 207.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_se7d4")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_ogbm8")
+theme_override_font_sizes/font_size = 56
+text = "Default Sword"
 
 [connection signal="value_changed" from="Map/HSlider" to="Map" method="_on_h_slider_value_changed"]
