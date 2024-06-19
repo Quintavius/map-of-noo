@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://icxg80kr7xoy"]
+[gd_scene load_steps=29 format=3 uid="uid://icxg80kr7xoy"]
 
 [ext_resource type="Shader" uid="uid://c02kgwblpfv05" path="res://shaders/map.tres" id="1_5idcf"]
 [ext_resource type="Script" path="res://scripts/Map.gd" id="1_lp277"]
@@ -75,6 +75,11 @@ gradient = SubResource("Gradient_dleve")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_84kjd"]
 shader = ExtResource("6_hpcjg")
 shader_parameter/gradient_texture = SubResource("GradientTexture1D_fnrem")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_we0ww"]
+content_margin_left = 9.0
+content_margin_top = 7.0
+content_margin_right = 4.0
 
 [node name="Main" type="Node"]
 
@@ -299,20 +304,41 @@ theme = ExtResource("6_se7d4")
 text = "Description"
 autowrap_mode = 2
 
-[node name="Panel" type="NinePatchRect" parent="Control"]
-texture_filter = 1
-custom_minimum_size = Vector2(30, 60)
+[node name="Control2" type="Control" parent="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 375.0
+offset_top = 525.0
+offset_right = 375.0
+offset_bottom = 525.0
+size_flags_horizontal = 3
+
+[node name="Panel2" type="Panel" parent="Control"]
+layout_mode = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_we0ww")
+
+[node name="CenterContainer" type="VBoxContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -154.0
-offset_top = 50.0
-offset_right = 218.0
-offset_bottom = 261.0
+offset_left = -332.0
+offset_top = 38.0
+offset_right = 337.0
+offset_bottom = 157.0
 grow_horizontal = 2
+
+[node name="Panel2" type="MarginContainer" parent="Control/CenterContainer"]
+layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="Panel" type="NinePatchRect" parent="Control/CenterContainer/Panel2"]
+texture_filter = 1
+layout_mode = 2
 texture = ExtResource("10_4r840")
 region_rect = Rect2(1, 0, 94, 96)
 patch_margin_left = 24
@@ -320,23 +346,19 @@ patch_margin_top = 24
 patch_margin_right = 24
 patch_margin_bottom = 24
 
-[node name="Name" type="Label" parent="Control/Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -207.0
-offset_top = -44.0
-offset_right = 207.0
-offset_bottom = 44.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="MarginContainer" type="MarginContainer" parent="Control/CenterContainer/Panel2"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 12
+
+[node name="Name" type="Label" parent="Control/CenterContainer/Panel2/MarginContainer"]
+layout_mode = 2
 theme = ExtResource("6_se7d4")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("10_ogbm8")
-theme_override_font_sizes/font_size = 56
+theme_override_font_sizes/font_size = 49
 text = "Default Sword"
 
 [connection signal="value_changed" from="Map/HSlider" to="Map" method="_on_h_slider_value_changed"]
