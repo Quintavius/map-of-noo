@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://icxg80kr7xoy"]
+[gd_scene load_steps=43 format=3 uid="uid://icxg80kr7xoy"]
 
 [ext_resource type="Shader" uid="uid://c02kgwblpfv05" path="res://shaders/map.tres" id="1_5idcf"]
 [ext_resource type="Script" path="res://scripts/Map.gd" id="1_lp277"]
@@ -9,10 +9,21 @@
 [ext_resource type="Theme" uid="uid://cvsrecu06my7j" path="res://theme.tres" id="6_se7d4"]
 [ext_resource type="Resource" uid="uid://baj0ffvauo016" path="res://cards/items/TestCard.tres" id="7_40afh"]
 [ext_resource type="Texture2D" uid="uid://g3w8f6ks52h3" path="res://assets/card_art/items/default_item.webp" id="8_3qhvi"]
-[ext_resource type="Texture2D" uid="uid://ls47ulesl5x2" path="res://assets/interface/borders/Double/Transparent center/panel-transparent-center-011.png" id="10_4r840"]
-[ext_resource type="FontFile" uid="uid://byuuqiev07uoa" path="res://fonts/DarksameRegular.ttf" id="10_ogbm8"]
 [ext_resource type="Script" path="res://scripts/resources/SessionManager.gd" id="10_tsny2"]
 [ext_resource type="Script" path="res://scripts/resources/DeckManager.gd" id="11_0bixo"]
+[ext_resource type="Texture2D" uid="uid://cbvvdmhf8ru62" path="res://assets/interface/cards/characters_frame.png" id="12_pnuhu"]
+[ext_resource type="FontFile" uid="uid://cmmtl7hoyey32" path="res://fonts/WitheringAway-Regular.otf" id="13_02c5l"]
+[ext_resource type="FontFile" uid="uid://cu21v3l257t3x" path="res://fonts/Paquito-Regular.otf" id="13_5rrdd"]
+[ext_resource type="Texture2D" uid="uid://dyue72j47gpgv" path="res://assets/interface/cards/flourish.png" id="14_8j65f"]
+[ext_resource type="Texture2D" uid="uid://dlq156prrfvna" path="res://assets/interface/cards/description_box.png" id="14_hug62"]
+[ext_resource type="Texture2D" uid="uid://7hnlifnfxq1x" path="res://assets/interface/cards/description_edge.png" id="14_ody6h"]
+[ext_resource type="FontFile" uid="uid://g2crxo054103" path="res://fonts/Paquito-Bold.otf" id="15_q667p"]
+[ext_resource type="PackedScene" uid="uid://bxutbed02mt3r" path="res://scenes/level_display.tscn" id="16_ujb6b"]
+[ext_resource type="Texture2D" uid="uid://brn5cesf7x33q" path="res://assets/interface/cards/defense_bg.png" id="19_r1b20"]
+[ext_resource type="Texture2D" uid="uid://dnjq71ipi8x14" path="res://assets/interface/cards/origin.png" id="20_ag6ff"]
+[ext_resource type="Texture2D" uid="uid://b6tuba1u61dms" path="res://assets/interface/cards/defense_main.png" id="20_icrvr"]
+[ext_resource type="FontFile" uid="uid://cooo2ejvyimwl" path="res://fonts/Paquito-Medium.otf" id="21_ya60o"]
+[ext_resource type="Texture2D" uid="uid://takjl1xjf47b" path="res://assets/interface/cards/artist.png" id="22_vgi8y"]
 
 [sub_resource type="Gradient" id="Gradient_m103y"]
 
@@ -76,10 +87,32 @@ gradient = SubResource("Gradient_dleve")
 shader = ExtResource("6_hpcjg")
 shader_parameter/gradient_texture = SubResource("GradientTexture1D_fnrem")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_we0ww"]
-content_margin_left = 9.0
-content_margin_top = 7.0
-content_margin_right = 4.0
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pmkl8"]
+content_margin_bottom = 52.0
+texture = ExtResource("14_hug62")
+texture_margin_top = 39.0
+region_rect = Rect2(0, 50, 719, 346)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0v6kw"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+texture = ExtResource("20_ag6ff")
+modulate_color = Color(0.396078, 0.14902, 0.12549, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ush7i"]
+font = ExtResource("21_ya60o")
+font_size = 20
+font_color = Color(0.945098, 0.882353, 0.835294, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lvmdx"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+texture = ExtResource("22_vgi8y")
+modulate_color = Color(0.396078, 0.14902, 0.12549, 1)
 
 [node name="Main" type="Node"]
 
@@ -237,7 +270,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Control" type="Control" parent="."]
+[node name="CharacterCard" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -251,7 +284,7 @@ offset_bottom = 525.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Images" type="CenterContainer" parent="Control"]
+[node name="Images" type="CenterContainer" parent="CharacterCard"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -267,24 +300,13 @@ grow_vertical = 2
 script = ExtResource("6_luaf0")
 test_data = ExtResource("7_40afh")
 
-[node name="Bleed" type="ColorRect" parent="Control/Images"]
-visible = false
-custom_minimum_size = Vector2(822, 1122)
-layout_mode = 2
-color = Color(0, 0, 0, 1)
-
-[node name="DecoBleed" type="Panel" parent="Control/Images"]
-custom_minimum_size = Vector2(750, 1050)
-layout_mode = 2
-theme = ExtResource("6_se7d4")
-
-[node name="ImageMask" type="Panel" parent="Control/Images"]
+[node name="ImageMask" type="Panel" parent="CharacterCard/Images"]
 clip_children = 1
 custom_minimum_size = Vector2(690, 990)
 layout_mode = 2
 theme = ExtResource("6_se7d4")
 
-[node name="Image" type="TextureRect" parent="Control/Images/ImageMask"]
+[node name="Image" type="TextureRect" parent="CharacterCard/Images/ImageMask"]
 custom_minimum_size = Vector2(690, 990)
 layout_mode = 1
 anchors_preset = 15
@@ -297,68 +319,248 @@ texture = ExtResource("8_3qhvi")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Description" type="Label" parent="Control/Images"]
-visible = false
-layout_mode = 2
-theme = ExtResource("6_se7d4")
-text = "Description"
-autowrap_mode = 2
-
-[node name="Control2" type="Control" parent="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 375.0
-offset_top = 525.0
-offset_right = 375.0
-offset_bottom = 525.0
-size_flags_horizontal = 3
-
-[node name="Panel2" type="Panel" parent="Control"]
-layout_mode = 0
-theme_override_styles/panel = SubResource("StyleBoxTexture_we0ww")
-
-[node name="CenterContainer" type="VBoxContainer" parent="Control"]
+[node name="DescriptionPanel" type="PanelContainer" parent="CharacterCard"]
+clip_children = 2
+custom_minimum_size = Vector2(719, 0)
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 7
 anchor_left = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-offset_left = -332.0
-offset_top = 38.0
-offset_right = 337.0
-offset_bottom = 157.0
+anchor_bottom = 1.0
+offset_left = -359.0
+offset_top = -305.0
+offset_right = 360.0
+offset_bottom = -37.0
 grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_pmkl8")
 
-[node name="Panel2" type="MarginContainer" parent="Control/CenterContainer"]
+[node name="DescriptionContents" type="VBoxContainer" parent="CharacterCard/DescriptionPanel"]
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/margin_left = 0
-theme_override_constants/margin_top = 0
-theme_override_constants/margin_right = 0
-theme_override_constants/margin_bottom = 0
+alignment = 1
 
-[node name="Panel" type="NinePatchRect" parent="Control/CenterContainer/Panel2"]
-texture_filter = 1
+[node name="DescriptionMargin" type="MarginContainer" parent="CharacterCard/DescriptionPanel/DescriptionContents"]
 layout_mode = 2
-texture = ExtResource("10_4r840")
-region_rect = Rect2(1, 0, 94, 96)
-patch_margin_left = 24
-patch_margin_top = 24
-patch_margin_right = 24
-patch_margin_bottom = 24
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_right = 75
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/CenterContainer/Panel2"]
+[node name="Description" type="Label" parent="CharacterCard/DescriptionPanel/DescriptionContents/DescriptionMargin"]
+custom_minimum_size = Vector2(0.305, 0.54)
 layout_mode = 2
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 24
-theme_override_constants/margin_bottom = 12
-
-[node name="Name" type="Label" parent="Control/CenterContainer/Panel2/MarginContainer"]
-layout_mode = 2
+size_flags_stretch_ratio = 0.0
 theme = ExtResource("6_se7d4")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("10_ogbm8")
-theme_override_font_sizes/font_size = 49
+theme_override_colors/font_color = Color(0.196078, 0.180392, 0.164706, 1)
+theme_override_fonts/font = ExtResource("13_5rrdd")
+theme_override_font_sizes/font_size = 30
+text = "Description for the item goes into this spot right here. Give it a bunch of text just to try it."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="FlourishMargin" type="MarginContainer" parent="CharacterCard/DescriptionPanel/DescriptionContents"]
+layout_mode = 2
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_bottom = 18
+
+[node name="Flourish" type="TextureRect" parent="CharacterCard/DescriptionPanel/DescriptionContents/FlourishMargin"]
+modulate = Color(0.752941, 0.243137, 0.290196, 1)
+layout_mode = 2
+texture = ExtResource("14_8j65f")
+stretch_mode = 3
+
+[node name="SkillsContainer" type="HBoxContainer" parent="CharacterCard/DescriptionPanel/DescriptionContents"]
+layout_mode = 2
+alignment = 1
+
+[node name="Skill0" type="MarginContainer" parent="CharacterCard/DescriptionPanel/DescriptionContents/SkillsContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 42
+theme_override_constants/margin_right = 42
+
+[node name="SkillBox" type="VBoxContainer" parent="CharacterCard/DescriptionPanel/DescriptionContents/SkillsContainer/Skill0"]
+layout_mode = 2
+
+[node name="SkillName" type="Label" parent="CharacterCard/DescriptionPanel/DescriptionContents/SkillsContainer/Skill0/SkillBox"]
+custom_minimum_size = Vector2(0.305, 0.54)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("6_se7d4")
+theme_override_colors/font_color = Color(0.196078, 0.180392, 0.164706, 1)
+theme_override_fonts/font = ExtResource("15_q667p")
+theme_override_font_sizes/font_size = 30
+text = "Matter"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelDisplay" parent="CharacterCard/DescriptionPanel/DescriptionContents/SkillsContainer/Skill0/SkillBox" instance=ExtResource("16_ujb6b")]
+layout_mode = 2
+
+[node name="Skill1" type="MarginContainer" parent="CharacterCard/DescriptionPanel/DescriptionContents/SkillsContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 42
+theme_override_constants/margin_right = 42
+
+[node name="SkillBox" type="VBoxContainer" parent="CharacterCard/DescriptionPanel/DescriptionContents/SkillsContainer/Skill1"]
+layout_mode = 2
+
+[node name="SkillName" type="Label" parent="CharacterCard/DescriptionPanel/DescriptionContents/SkillsContainer/Skill1/SkillBox"]
+custom_minimum_size = Vector2(0.305, 0.54)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("6_se7d4")
+theme_override_colors/font_color = Color(0.196078, 0.180392, 0.164706, 1)
+theme_override_fonts/font = ExtResource("15_q667p")
+theme_override_font_sizes/font_size = 30
+text = "Matter"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelDisplay" parent="CharacterCard/DescriptionPanel/DescriptionContents/SkillsContainer/Skill1/SkillBox" instance=ExtResource("16_ujb6b")]
+layout_mode = 2
+
+[node name="Skill2" type="MarginContainer" parent="CharacterCard/DescriptionPanel/DescriptionContents/SkillsContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 42
+theme_override_constants/margin_right = 42
+
+[node name="SkillBox" type="VBoxContainer" parent="CharacterCard/DescriptionPanel/DescriptionContents/SkillsContainer/Skill2"]
+layout_mode = 2
+
+[node name="SkillName" type="Label" parent="CharacterCard/DescriptionPanel/DescriptionContents/SkillsContainer/Skill2/SkillBox"]
+custom_minimum_size = Vector2(0.305, 0.54)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("6_se7d4")
+theme_override_colors/font_color = Color(0.196078, 0.180392, 0.164706, 1)
+theme_override_fonts/font = ExtResource("15_q667p")
+theme_override_font_sizes/font_size = 30
+text = "Matter"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelDisplay" parent="CharacterCard/DescriptionPanel/DescriptionContents/SkillsContainer/Skill2/SkillBox" instance=ExtResource("16_ujb6b")]
+layout_mode = 2
+
+[node name="DescriptionEdge" type="TextureRect" parent="CharacterCard"]
+modulate = Color(0.396078, 0.14902, 0.12549, 1)
+layout_mode = 2
+offset_left = 16.0
+offset_top = 629.0
+offset_right = 735.0
+offset_bottom = 1025.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+texture = ExtResource("14_ody6h")
+stretch_mode = 2
+
+[node name="Frame" type="TextureRect" parent="CharacterCard"]
+layout_mode = 0
+offset_right = 751.0
+offset_bottom = 1049.0
+texture = ExtResource("12_pnuhu")
+
+[node name="Defense" type="CenterContainer" parent="CharacterCard"]
+layout_mode = 2
+offset_left = 621.0
+offset_top = 844.0
+offset_right = 743.0
+offset_bottom = 923.0
+
+[node name="DefBack" type="TextureRect" parent="CharacterCard/Defense"]
+layout_mode = 2
+texture = ExtResource("19_r1b20")
+
+[node name="DefFront" type="TextureRect" parent="CharacterCard/Defense"]
+self_modulate = Color(0.396078, 0.14902, 0.12549, 1)
+layout_mode = 2
+texture = ExtResource("20_icrvr")
+
+[node name="BrainLevel" parent="CharacterCard" instance=ExtResource("16_ujb6b")]
+offset_left = 42.0
+offset_top = 219.0
+offset_right = 110.0
+offset_bottom = 239.0
+
+[node name="BrawnLevel" parent="CharacterCard" instance=ExtResource("16_ujb6b")]
+offset_left = 42.0
+offset_top = 340.0
+offset_right = 110.0
+offset_bottom = 360.0
+
+[node name="TongueLevel" parent="CharacterCard" instance=ExtResource("16_ujb6b")]
+offset_left = 42.0
+offset_top = 454.0
+offset_right = 110.0
+offset_bottom = 474.0
+
+[node name="HandLevel" parent="CharacterCard" instance=ExtResource("16_ujb6b")]
+offset_left = 42.0
+offset_top = 572.0
+offset_right = 110.0
+offset_bottom = 592.0
+
+[node name="Name" type="Label" parent="CharacterCard"]
+layout_mode = 2
+offset_left = 36.0
+offset_top = 40.0
+offset_right = 559.0
+offset_bottom = 122.0
+grow_vertical = 2
+theme = ExtResource("6_se7d4")
+theme_override_colors/font_color = Color(0.945098, 0.882353, 0.835294, 1)
+theme_override_fonts/font = ExtResource("13_02c5l")
+theme_override_font_sizes/font_size = 80
 text = "Default Sword"
+vertical_alignment = 1
+
+[node name="Era" type="Label" parent="CharacterCard"]
+layout_mode = 2
+offset_left = 585.0
+offset_top = 38.0
+offset_right = 607.0
+offset_bottom = 120.0
+grow_vertical = 2
+theme = ExtResource("6_se7d4")
+theme_override_colors/font_color = Color(0.945098, 0.882353, 0.835294, 1)
+theme_override_fonts/font = ExtResource("13_02c5l")
+theme_override_font_sizes/font_size = 37
+text = "I"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Origin" type="PanelContainer" parent="CharacterCard"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 977.0
+offset_right = 205.0
+offset_bottom = 1017.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_0v6kw")
+
+[node name="OriginName" type="Label" parent="CharacterCard/Origin"]
+layout_mode = 2
+text = "Emerald Garden"
+label_settings = SubResource("LabelSettings_ush7i")
+
+[node name="Artist" type="PanelContainer" parent="CharacterCard"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -70.0
+offset_right = -53.0
+offset_bottom = -36.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_lvmdx")
+
+[node name="ArtistName" type="Label" parent="CharacterCard/Artist"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Paladius Stex"
+label_settings = SubResource("LabelSettings_ush7i")
+horizontal_alignment = 2
 
 [connection signal="value_changed" from="Map/HSlider" to="Map" method="_on_h_slider_value_changed"]
