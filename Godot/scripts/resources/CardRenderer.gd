@@ -84,6 +84,7 @@ func request(url: String, callback: Callable, method: HTTPClient.Method = HTTPCl
 	if path != "":
 		http_request.set_download_file(path)
 	error = http_request.request(url + QUERY, headers, method, body_str)
+	print(url + QUERY)
 	if error != OK:
 		push_error("Bad HTTP request. Code error most likely")
 	return error
@@ -108,7 +109,7 @@ func _request_completed(result, response_code, headers, body, callback: Callable
 
 func sync_sheet() -> bool:
 	var url := "https://docs.google.com/spreadsheets/d/" + "1QBlhDNbKv8KKqeYgz6W9YZ88JgUDJdL4mCPGo6OTXgE" + "/gviz/tq"
-	request(url, func(r, err): sync_sheet_callback(r, err), HTTPClient.METHOD_GET, {"tqx": "out:csv", "sheet": "Items", "tq":"SELECT * WHERE A IS NOT NULL"}, {}, [], "res://source_data/ItemData.csv")
+	request(url, func(r, err): sync_sheet_callback(r, err), HTTPClient.METHOD_GET, {"tqx": "out:csv", "sheet": "Items", "tq":"SELECT * WHERE A IS NOT NULL", "headers":"1"}, {}, [], "res://source_data/ItemData.csv")
 	return true
 
 func sync_sheet_callback(r, err) -> void:
