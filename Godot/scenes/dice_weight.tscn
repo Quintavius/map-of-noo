@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bberqd018cwn5"]
+
+[ext_resource type="Texture2D" uid="uid://m026p7uow4qw" path="res://assets/interface/cards/dice_heavy.png" id="1_3drlv"]
+[ext_resource type="Script" path="res://scenes/DiceWeight.gd" id="2_bpnc8"]
+
+[node name="DiceWeight" type="TextureRect"]
+self_modulate = Color(0.752941, 0.243137, 0.290196, 1)
+offset_left = 683.0
+offset_top = 866.0
+offset_right = 728.0
+offset_bottom = 898.0
+texture = ExtResource("1_3drlv")
+script = ExtResource("2_bpnc8")

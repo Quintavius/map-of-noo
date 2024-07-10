@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://icxg80kr7xoy"]
+[gd_scene load_steps=46 format=3 uid="uid://icxg80kr7xoy"]
 
 [ext_resource type="Shader" uid="uid://c02kgwblpfv05" path="res://shaders/map.tres" id="1_5idcf"]
 [ext_resource type="Script" path="res://scripts/Map.gd" id="1_lp277"]
@@ -7,8 +7,8 @@
 [ext_resource type="Shader" path="res://shaders/ColourRamp.gdshader" id="6_hpcjg"]
 [ext_resource type="Script" path="res://scripts/resources/CardRenderer.gd" id="6_luaf0"]
 [ext_resource type="Theme" uid="uid://cvsrecu06my7j" path="res://theme.tres" id="6_se7d4"]
-[ext_resource type="Resource" uid="uid://baj0ffvauo016" path="res://cards/items/TestCard.tres" id="7_40afh"]
 [ext_resource type="Texture2D" uid="uid://g3w8f6ks52h3" path="res://assets/card_art/items/default_item.webp" id="8_3qhvi"]
+[ext_resource type="Resource" uid="uid://bfvt6d1gt33nr" path="res://cards/characters/LumiaTrequel.tres" id="9_vm30o"]
 [ext_resource type="Script" path="res://scripts/resources/SessionManager.gd" id="10_tsny2"]
 [ext_resource type="Script" path="res://scripts/resources/DeckManager.gd" id="11_0bixo"]
 [ext_resource type="Texture2D" uid="uid://cbvvdmhf8ru62" path="res://assets/interface/cards/characters_frame.png" id="12_pnuhu"]
@@ -22,8 +22,11 @@
 [ext_resource type="Texture2D" uid="uid://brn5cesf7x33q" path="res://assets/interface/cards/defense_bg.png" id="19_r1b20"]
 [ext_resource type="Texture2D" uid="uid://dnjq71ipi8x14" path="res://assets/interface/cards/origin.png" id="20_ag6ff"]
 [ext_resource type="Texture2D" uid="uid://b6tuba1u61dms" path="res://assets/interface/cards/defense_main.png" id="20_icrvr"]
+[ext_resource type="Texture2D" uid="uid://dswwffk7pcola" path="res://assets/interface/cards/attack_bg.png" id="21_ci0p8"]
+[ext_resource type="PackedScene" uid="uid://bberqd018cwn5" path="res://scenes/dice_weight.tscn" id="21_j848o"]
 [ext_resource type="FontFile" uid="uid://cooo2ejvyimwl" path="res://fonts/Paquito-Medium.otf" id="21_ya60o"]
 [ext_resource type="Texture2D" uid="uid://takjl1xjf47b" path="res://assets/interface/cards/artist.png" id="22_vgi8y"]
+[ext_resource type="Texture2D" uid="uid://dyvix1xgsdjvl" path="res://assets/interface/cards/attack_main.png" id="22_vjwnx"]
 
 [sub_resource type="Gradient" id="Gradient_m103y"]
 
@@ -283,35 +286,16 @@ offset_right = 375.0
 offset_bottom = 525.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Images" type="CenterContainer" parent="CharacterCard"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -375.0
-offset_top = -525.0
-offset_right = 375.0
-offset_bottom = 525.0
-grow_horizontal = 2
-grow_vertical = 2
 script = ExtResource("6_luaf0")
-test_data = ExtResource("7_40afh")
+test_data = ExtResource("9_vm30o")
 
-[node name="ImageMask" type="Panel" parent="CharacterCard/Images"]
-clip_children = 1
+[node name="Image" type="TextureRect" parent="CharacterCard"]
 custom_minimum_size = Vector2(690, 990)
 layout_mode = 2
-theme = ExtResource("6_se7d4")
-
-[node name="Image" type="TextureRect" parent="CharacterCard/Images/ImageMask"]
-custom_minimum_size = Vector2(690, 990)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 720.0
+offset_bottom = 1020.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("6_se7d4")
@@ -476,25 +460,59 @@ self_modulate = Color(0.396078, 0.14902, 0.12549, 1)
 layout_mode = 2
 texture = ExtResource("20_icrvr")
 
+[node name="Attack" type="CenterContainer" parent="CharacterCard"]
+layout_mode = 2
+offset_left = 13.0
+offset_top = 841.0
+offset_right = 135.0
+offset_bottom = 920.0
+
+[node name="AtkBack" type="TextureRect" parent="CharacterCard/Attack"]
+layout_mode = 2
+texture = ExtResource("21_ci0p8")
+
+[node name="AtkFront" type="TextureRect" parent="CharacterCard/Attack"]
+self_modulate = Color(0.396078, 0.14902, 0.12549, 1)
+layout_mode = 2
+texture = ExtResource("22_vjwnx")
+
+[node name="DefDiceWeight" parent="CharacterCard" instance=ExtResource("21_j848o")]
+layout_mode = 0
+offset_left = 684.0
+offset_top = 864.0
+offset_right = 729.0
+offset_bottom = 896.0
+
+[node name="AtkDiceWeight" parent="CharacterCard" instance=ExtResource("21_j848o")]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 864.0
+offset_right = 111.0
+offset_bottom = 896.0
+
 [node name="BrainLevel" parent="CharacterCard" instance=ExtResource("16_ujb6b")]
+layout_mode = 0
 offset_left = 42.0
 offset_top = 219.0
 offset_right = 110.0
 offset_bottom = 239.0
 
 [node name="BrawnLevel" parent="CharacterCard" instance=ExtResource("16_ujb6b")]
+layout_mode = 0
 offset_left = 42.0
 offset_top = 340.0
 offset_right = 110.0
 offset_bottom = 360.0
 
 [node name="TongueLevel" parent="CharacterCard" instance=ExtResource("16_ujb6b")]
+layout_mode = 0
 offset_left = 42.0
 offset_top = 454.0
 offset_right = 110.0
 offset_bottom = 474.0
 
-[node name="HandLevel" parent="CharacterCard" instance=ExtResource("16_ujb6b")]
+[node name="HandsLevel" parent="CharacterCard" instance=ExtResource("16_ujb6b")]
+layout_mode = 0
 offset_left = 42.0
 offset_top = 572.0
 offset_right = 110.0

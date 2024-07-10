@@ -1,5 +1,7 @@
 class_name Character extends Actor
 
+const CARD_TYPE = CardProperties.CardTypes.Character
+
 @export var species : CharacterProperties.Species
 
 @export var inventory : Array[Item]

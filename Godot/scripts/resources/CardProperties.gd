@@ -3,6 +3,8 @@ class_name CardProperties
 
 enum DiceClass{Light, Medium, Heavy}
 
+enum CardTypes{Character, Creature, Item, Place}
+
 enum Culture{
 	AetherMafia
 }

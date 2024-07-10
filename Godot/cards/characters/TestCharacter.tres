@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Character" load_steps=2 format=3 uid="uid://vp38fc1e2int"]
+[gd_resource type="Resource" script_class="Character" load_steps=3 format=3 uid="uid://vp38fc1e2int"]
 
+[ext_resource type="Texture2D" uid="uid://dne3cdb2htpli" path="res://assets/card_art/items/deepsea_vision_goggles.webp" id="1_4f0co"]
 [ext_resource type="Script" path="res://scripts/resources/Character.gd" id="1_ox6kr"]
 
 [resource]
@@ -8,32 +9,33 @@ species = 0
 inventory = Array[Resource("res://scripts/resources/Item.gd")]([])
 accessories = Array[Resource("res://scripts/resources/Item.gd")]([])
 state = 0
-brains = {
-"experience": 0,
-"level": 0
-}
-brawn = {
-"experience": 0,
-"level": 0
-}
-tongue = {
-"experience": 0,
-"level": 0
-}
-hands = {
-"experience": 0,
-"level": 0
-}
-skin = {
-"experience": 0,
-"level": 0
-}
+pronouns = ""
+brains = 0
+brains_exp = 0
+brawn = 1
+brawn_exp = 0
+tongue = 2
+tongue_exp = 0
+hands = 3
+hands_exp = 0
 attack = 0
-defense = 0
-dreamwalking = Array[int]([])
-name = ""
-culture = 0
-artist = 0
-description = ""
+defense = 1
+skill_0_active = true
+skill_0_name = "Donkeys"
+skill_0_level = 1
+skill_0_exp = 0
+skill_1_active = true
+skill_1_name = "Frogs"
+skill_1_level = 2
+skill_1_exp = 0
+skill_2_active = true
+skill_2_name = "Screm"
+skill_2_level = 3
+skill_2_exp = 0
+name = "Celery"
+culture = "Secorran Guard"
+artist = "Borique Boutique"
+description = "Test description goes here."
 effect = ""
+image = ExtResource("1_4f0co")
 legendary = false

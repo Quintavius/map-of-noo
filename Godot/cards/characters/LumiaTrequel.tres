@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="Character" load_steps=3 format=3 uid="uid://bfvt6d1gt33nr"]
+
+[ext_resource type="Texture2D" uid="uid://726hucuinl6n" path="res://assets/card_art/characters/lumia_trequel.png" id="1_bvdk5"]
+[ext_resource type="Script" path="res://scripts/resources/Character.gd" id="1_nob4h"]
+
+[resource]
+script = ExtResource("1_nob4h")
+species = 0
+inventory = Array[Resource("res://scripts/resources/Item.gd")]([])
+accessories = Array[Resource("res://scripts/resources/Item.gd")]([])
+state = 0
+pronouns = ""
+brains = 3
+brains_exp = 0
+brawn = 3
+brawn_exp = 0
+tongue = 2
+tongue_exp = 0
+hands = 2
+hands_exp = 0
+attack = 2
+defense = 1
+skill_0_active = true
+skill_0_name = "Matter"
+skill_0_level = 2
+skill_0_exp = 0
+skill_1_active = true
+skill_1_name = "Spirit"
+skill_1_level = 3
+skill_1_exp = 0
+skill_2_active = true
+skill_2_name = "Time"
+skill_2_level = 1
+skill_2_exp = 0
+name = "Lumia Trequel"
+culture = "Dreamwalker Academy"
+artist = "Ponder"
+description = "The dreamwalker of legend."
+effect = ""
+image = ExtResource("1_bvdk5")
+legendary = false
