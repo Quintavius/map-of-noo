@@ -1,3 +1,18 @@
 [remap]
 
-importer="keep"
+importer="com.timothyqiu.godot-csv-importer"
+type="Resource"
+uid="uid://w4v7wr8rj1q2"
+path="res://.godot/imported/ItemData.csv-c0253b381240ad7993ecbdb56d368a3c.res"
+
+[deps]
+
+source_file="res://source_data/ItemData.csv"
+dest_files=["res://.godot/imported/ItemData.csv-c0253b381240ad7993ecbdb56d368a3c.res"]
+
+[params]
+
+delimiter=0
+headers=true
+detect_numbers=true
+force_float=false

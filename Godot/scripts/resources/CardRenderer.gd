@@ -3,50 +3,69 @@ extends Control
 # Debug
 @export var test_data : Card
 
-var csv_data = "res://source_data/ROALD Cards - Portraits.csv"
+var data = preload("res://source_data/CharacterData.csv")
 
 func render_card(card_data : Variant):
 	# Common
-	$Name.text = card_data.name
-	$Image.texture = card_data.image
-	$DescriptionPanel/DescriptionContents/DescriptionMargin/Description.text = card_data.description
+	var csv_entry : Dictionary = data.records[0] 
 	
-	$Origin/OriginName.text = card_data.culture
-	$Artist/ArtistName.text = card_data.artist
+	var has_description : bool = csv_entry["Description"] != ""
+	var has_skills : bool = !(csv_entry["Skill0"] == "" && csv_entry["Skill1"] == "" && csv_entry["Skill2"] == "")
+	#var has_effect : bool = csv_entry["Effect"] != ""
+	
+	$DescriptionPanel/DescriptionContents/FlourishMargin.visible = has_description && has_skills
+	$DescriptionPanel/DescriptionContents/DescriptionMargin.visible = has_description
+	$DescriptionPanel/DescriptionContents/SkillsContainer.visible = has_skills
+	
+	$Name.text = csv_entry["Name"]
+	$Image.texture = card_data.image
+	$DescriptionPanel/DescriptionContents/DescriptionMargin/Description.text = csv_entry["Description"]
+	
+	$Origin/OriginName.text = csv_entry["Origin"]
+	$Artist/ArtistName.text = csv_entry["Artist"]
 	
 	# Specific 
 	match card_data.CARD_TYPE:
 		CardProperties.CardTypes.Character:
 			#pronouns : String
-			$BrainLevel.update_level(card_data.brains)
-			$BrawnLevel.update_level(card_data.brawn)
-			$TongueLevel.update_level(card_data.tongue)
-			$HandsLevel.update_level(card_data.hands)
+			$BrainLevel.update_level(csv_entry["Brains"])
+			$BrawnLevel.update_level(csv_entry["Brawn"])
+			$TongueLevel.update_level(csv_entry["Tongue"])
+			$HandsLevel.update_level(csv_entry["Hands"])
 			
-			$AtkDiceWeight.update_level(card_data.attack)
-			$DefDiceWeight.update_level(card_data.defense)
+			$AtkDiceWeight.update_level(CardProperties.DiceClass[csv_entry["Attack"]])
+			$DefDiceWeight.update_level(CardProperties.DiceClass[csv_entry["Defense"]])
 			
 			var skill_0 = $DescriptionPanel/DescriptionContents/SkillsContainer/Skill0
-			skill_0.visible = card_data.skill_0_active
-			skill_0.get_node("SkillBox/SkillName").text = card_data.skill_0_name
-			skill_0.get_node("SkillBox/LevelDisplay").update_level(card_data.skill_0_level)
+			if csv_entry["Skill0"] != "":
+				skill_0.visible = true
+				skill_0.get_node("SkillBox/SkillName").text = csv_entry["Skill0"]
+				skill_0.get_node("SkillBox/LevelDisplay").update_level(csv_entry["Skill0Lv"])
+			else:
+				skill_0.visible = false
 			
 			var skill_1 = $DescriptionPanel/DescriptionContents/SkillsContainer/Skill1
-			skill_1.visible = card_data.skill_1_active
-			skill_1.get_node("SkillBox/SkillName").text = card_data.skill_1_name
-			skill_1.get_node("SkillBox/LevelDisplay").update_level(card_data.skill_1_level)
+			if csv_entry["Skill1"] != "":
+				skill_1.visible = true
+				skill_1.get_node("SkillBox/SkillName").text = csv_entry["Skill1"]
+				skill_1.get_node("SkillBox/LevelDisplay").update_level(csv_entry["Skill1Lv"])
+			else:
+				skill_1.visible = false
 			
 			var skill_2 = $DescriptionPanel/DescriptionContents/SkillsContainer/Skill2
-			skill_2.visible = card_data.skill_2_active
-			skill_2.get_node("SkillBox/SkillName").text = card_data.skill_2_name
-			skill_2.get_node("SkillBox/LevelDisplay").update_level(card_data.skill_2_level)
+			if csv_entry["Skill2"] != "":
+				skill_2.visible = true
+				skill_2.get_node("SkillBox/SkillName").text = csv_entry["Skill2"]
+				skill_2.get_node("SkillBox/LevelDisplay").update_level(csv_entry["Skill2Lv"])
+			else:
+				skill_2.visible = false
 			
 	pass
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	render_card(test_data)
-	sync_sheet()
+	#sync_sheet()
 	#print(csv_data[0][Name])
 	
 
@@ -109,7 +128,7 @@ func _request_completed(result, response_code, headers, body, callback: Callable
 
 func sync_sheet() -> bool:
 	var url := "https://docs.google.com/spreadsheets/d/" + "1QBlhDNbKv8KKqeYgz6W9YZ88JgUDJdL4mCPGo6OTXgE" + "/gviz/tq"
-	request(url, func(r, err): sync_sheet_callback(r, err), HTTPClient.METHOD_GET, {"tqx": "out:csv", "sheet": "Items", "tq":"SELECT * WHERE A IS NOT NULL", "headers":"1"}, {}, [], "res://source_data/ItemData.csv")
+	request(url, func(r, err): sync_sheet_callback(r, err), HTTPClient.METHOD_GET, {"tqx": "out:csv", "sheet": "Portraits", "tq":"SELECT * WHERE A IS NOT NULL", "headers":"1"}, {}, [], "res://source_data/CharacterData.csv")
 	return true
 
 func sync_sheet_callback(r, err) -> void:
