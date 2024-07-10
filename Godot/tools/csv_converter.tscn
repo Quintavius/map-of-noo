@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5jv8rbf3r7p4"]
+
+[ext_resource type="Script" path="res://tools/csv_converter.gd" id="1_2cis4"]
+
+[node name="CSVConverter" type="Node"]
+script = ExtResource("1_2cis4")
