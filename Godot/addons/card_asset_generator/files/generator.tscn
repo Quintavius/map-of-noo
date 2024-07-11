@@ -1,0 +1,88 @@
+[gd_scene load_steps=2 format=3 uid="uid://0gw2p3i86sla"]
+
+[ext_resource type="Script" path="res://addons/card_asset_generator/files/generator.gd" id="1_4yvbm"]
+
+[node name="Generator" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4yvbm")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+text = "Card Generator"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Generate resource files for cards based on downloaded CSV data."
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 2
+text = "Download Card Data"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Download All" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+disabled = true
+text = "Download All
+"
+
+[node name="Download Items" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+disabled = true
+text = "Download Items"
+
+[node name="Download Characters" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+text = "Download Characters"
+
+[node name="Download Creatures" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+disabled = true
+text = "Download Creatures"
+
+[node name="Download Places" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+disabled = true
+text = "Download Places"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 2
+text = "Generate Cards"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Generate All" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+disabled = true
+text = "Generate All
+"
+
+[node name="Generate Items" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "Generate Items"
+
+[node name="Generate Characters" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Generate Characters"
+
+[node name="Generate Creatures" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "Generate Creatures"
+
+[node name="Generate Places" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "Generate Places"
+
+[connection signal="button_up" from="HBoxContainer2/Download Characters" to="." method="_on_download_characters"]
+[connection signal="button_up" from="HBoxContainer/Generate Characters" to="." method="_on_generate_characters"]

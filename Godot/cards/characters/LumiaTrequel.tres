@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Character" load_steps=3 format=3 uid="uid://bfvt6d1gt33nr"]
 
-[ext_resource type="Texture2D" uid="uid://726hucuinl6n" path="res://assets/card_art/characters/lumia_trequel.png" id="1_bvdk5"]
+[ext_resource type="Texture2D" uid="uid://726hucuinl6n" path="res://assets/card_art/characters/Lumia Trequel.png" id="1_bvdk5"]
 [ext_resource type="Script" path="res://scripts/resources/Character.gd" id="1_nob4h"]
 
 [resource]

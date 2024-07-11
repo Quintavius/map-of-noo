@@ -26,7 +26,7 @@ window/handheld/orientation=1
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/csv-data-importer/plugin.cfg")
+enabled=PackedStringArray("res://addons/card_asset_generator/plugin.cfg", "res://addons/csv-data-importer/plugin.cfg")
 
 [rendering]
 

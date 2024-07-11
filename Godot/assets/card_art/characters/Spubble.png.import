@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://726hucuinl6n"
-path="res://.godot/imported/lumia_trequel.png-e5d356daf45e6034922bc876b8a2ded0.ctex"
+uid="uid://csl56uhq5bww6"
+path="res://.godot/imported/Spubble.png-6cf2dc50e37b234e3cbe092ce6c76654.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/card_art/characters/lumia_trequel.png"
-dest_files=["res://.godot/imported/lumia_trequel.png-e5d356daf45e6034922bc876b8a2ded0.ctex"]
+source_file="res://assets/card_art/characters/Spubble.png"
+dest_files=["res://.godot/imported/Spubble.png-6cf2dc50e37b234e3cbe092ce6c76654.ctex"]
 
 [params]
 
