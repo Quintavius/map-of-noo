@@ -3,8 +3,6 @@ extends Control
 
 #var file_dialog : EditorFileDialog
 
-
-
 #Debug, protects from running when editing scene file
 var should_setup : bool = false
 
@@ -73,12 +71,31 @@ func generate_characters():
 	cards_resource.CharacterCards = characters_dictionary
 	print("Created " + str(characters_dictionary.size()) + " characters.")
 
+func export_characters():
+	var base_path = "res://export/characters/"
+	var subviewport : SubViewport = $CharacterExport
+	var renderer = $CharacterExport/CardRenderer
+	
+	var cards_data = load("res://cards/cards_data.tres")
+	var character_cards : Dictionary = cards_data.CharacterCards
+	for character_card in character_cards:
+		renderer.render_card(character_cards[character_card])
+		subviewport.render_target_update_mode = SubViewport.UPDATE_ONCE
+		await RenderingServer.frame_pre_draw
+		await RenderingServer.frame_post_draw
+		var rendered_image = subviewport.get_texture().get_image()
+		rendered_image.convert(Image.FORMAT_RGBA8)
+		rendered_image.save_png(base_path + character_card + ".png")
+	print("Export completed.")
+
 func _on_generate_characters():
 	generate_characters()
 
-
 func _on_download_characters():
 	download_characters()
+
+func _on_export_characters():
+	export_characters()
 
 const HEADER = ["Content-Type: application/json; charset=UTF-8"]
 func request(url: String, callback: Callable, method: HTTPClient.Method = HTTPClient.METHOD_GET, query: Dictionary = {}, body: Dictionary = {}, headers: Array = HEADER, path: String = "") -> Error:
@@ -124,3 +141,5 @@ func sync_sheet() -> bool:
 
 func sync_sheet_callback(r, err) -> void:
 	pass
+
+

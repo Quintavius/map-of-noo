@@ -7,7 +7,6 @@ func _enter_tree():
 	# This reloads every time the plugin is activated
 	var packed : PackedScene = load("res://addons/card_asset_generator/files/generator.tscn")
 	generator_instance = packed.instantiate()
-	generator_instance.should_setup = true
 	
 	add_control_to_bottom_panel(generator_instance, "Card Generator")
 

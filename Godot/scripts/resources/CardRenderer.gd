@@ -1,3 +1,4 @@
+@tool
 extends Control
 
 var cards_data = preload("res://cards/cards_data.tres")

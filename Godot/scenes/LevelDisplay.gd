@@ -1,3 +1,4 @@
+@tool
 extends CenterContainer
 
 var current_level := 0

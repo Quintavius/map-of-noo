@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://0gw2p3i86sla"]
+[gd_scene load_steps=3 format=3 uid="uid://0gw2p3i86sla"]
 
 [ext_resource type="Script" path="res://addons/card_asset_generator/files/generator.gd" id="1_4yvbm"]
+[ext_resource type="PackedScene" uid="uid://cyatuhib7ucg4" path="res://scenes/character_export.tscn" id="2_0kkoa"]
 
 [node name="Generator" type="VBoxContainer"]
 anchors_preset = 15
@@ -84,5 +85,41 @@ layout_mode = 2
 disabled = true
 text = "Generate Places"
 
+[node name="Label5" type="Label" parent="."]
+layout_mode = 2
+text = "Export Cards"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Export All" type="Button" parent="HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+disabled = true
+text = "Export All
+"
+
+[node name="Export Items" type="Button" parent="HBoxContainer3"]
+layout_mode = 2
+disabled = true
+text = "Export Items"
+
+[node name="Export Characters" type="Button" parent="HBoxContainer3"]
+layout_mode = 2
+text = "Export Characters"
+
+[node name="Export Creatures" type="Button" parent="HBoxContainer3"]
+layout_mode = 2
+disabled = true
+text = "Export Creatures"
+
+[node name="Export Places" type="Button" parent="HBoxContainer3"]
+layout_mode = 2
+disabled = true
+text = "Export Places"
+
+[node name="CharacterExport" parent="." instance=ExtResource("2_0kkoa")]
+
 [connection signal="button_up" from="HBoxContainer2/Download Characters" to="." method="_on_download_characters"]
 [connection signal="button_up" from="HBoxContainer/Generate Characters" to="." method="_on_generate_characters"]
+[connection signal="button_up" from="HBoxContainer3/Export Characters" to="." method="_on_export_characters"]
