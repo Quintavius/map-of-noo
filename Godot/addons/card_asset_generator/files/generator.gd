@@ -17,77 +17,123 @@ func _ready():
 	#file_dialog.file_selected.connect(_on_add_file_selected)
 	#add_child(file_dialog)
 
-func generate_characters():
-	var cards_resource = load("res://cards/cards_data.tres")
-	var character_data = load("res://source_data/CharacterData.csv")
+func generate_cards(source, type):
+	var target = load("res://cards/cards_data.tres")
+	#var character_data = load("res://source_data/CharacterData.csv")
 	
-	var high_ages_only = character_data.records.filter(func(record): return record["Era"] == "High Ages" && record["Species"] != "Chaos God")
+	var high_ages_only = source.records.filter(func(record): return record["Expansion"] == "The Worldsplitter")
 	
-	var characters_dictionary = {}
-	for character_entry in high_ages_only:
-		var new_character = Character.new()
-		new_character.card_type = CardProperties.CardTypes.Character
+	var cards_dictionary = {}
+	
+	var new_card
+	var card_base_path
+	
+	for card_entry in high_ages_only:
+		match type:
+			CardProperties.CardTypes.Character :
+				card_base_path = "res://assets/card_art/characters/"
+				new_card = Character.new()
+				new_card.card_type = CardProperties.CardTypes.Character
+				new_card.species = card_entry["Species"]
+				set_stats(new_card, card_entry)
+				new_card.attack = CardProperties.DiceClass[card_entry["Attack"]]
+				new_card.defense = CardProperties.DiceClass[card_entry["Defense"]]
+				set_skills(new_card, card_entry)
+			
+			CardProperties.CardTypes.Item : 
+				new_card = Item.new()
+				var item_type = card_entry["Type"]
+				card_base_path = "res://assets/card_art/items/"
+				match item_type:
+					"Weapon":
+						new_card.card_type = CardProperties.CardTypes.Weapon
+						new_card.attack = CardProperties.DiceClass[card_entry["Stat"]]
+					"Attire":
+						new_card.card_type = CardProperties.CardTypes.Attire
+						new_card.defense = CardProperties.DiceClass[card_entry["Stat"]]
+					"Accessory":
+						new_card.card_type = CardProperties.CardTypes.Accessory
+					"Consumable":
+						new_card.card_type = CardProperties.CardTypes.Consumable
+					"Trap":
+						new_card.card_type = CardProperties.CardTypes.Trap
+					"Treasure":
+						new_card.card_type = CardProperties.CardTypes.Treasure
+				
+			CardProperties.CardTypes.Creature :
+				card_base_path = "res://assets/card_art/creatures/"
+				new_card = Creature.new()
+				new_card.card_type = CardProperties.CardTypes.Creature
+				new_card.attack = CardProperties.DiceClass[card_entry["Attack"]]
+				new_card.defense = CardProperties.DiceClass[card_entry["Defense"]]
+			
+			CardProperties.CardTypes.Place :
+				pass
+				#new_card = Place.new()
 		
-		# Extract all necessary info
-		new_character.name = character_entry["Name"]
-		new_character.era = character_entry["Era"]
-		new_character.species = character_entry["Species"]
-		
-		var image_location = "res://assets/card_art/characters/" + character_entry["Name"] + ".png"
+		# Set up common shit
+		new_card.name = card_entry["Name"]
+		new_card.era = card_entry["Era"]
+		new_card.description = card_entry["Description"]
+		new_card.effect = card_entry["Effect"]
+		new_card.culture = card_entry["Origin"]
+		new_card.artist = card_entry["Artist"]
+		var image_location = card_base_path + card_entry["Name"] + ".png"
 		if ResourceLoader.exists(image_location):
-			new_character.image = load("res://assets/card_art/characters/" + character_entry["Name"] + ".png")
+			new_card.image = load(image_location)
 		else:
 			print("Missing image: " + image_location)
 		
-		new_character.brains = character_entry["Brains"]
-		new_character.brawn = character_entry["Brawn"]
-		new_character.tongue = character_entry["Tongue"]
-		new_character.hands = character_entry["Hands"]
-		
-		new_character.description = character_entry["Description"]
-		
-		new_character.attack = CardProperties.DiceClass[character_entry["Attack"]]
-		new_character.defense = CardProperties.DiceClass[character_entry["Defense"]]
-		
-		new_character.skill_0_active = character_entry["Skill0"] != ""
-		new_character.skill_0_name = character_entry["Skill0"]
-		new_character.skill_0_level = int(character_entry["Skill0Lv"])
-		
-		new_character.skill_1_active = character_entry["Skill1"] != ""
-		new_character.skill_1_name = character_entry["Skill1"]
-		new_character.skill_1_level = int(character_entry["Skill1Lv"])
-		
-		new_character.skill_2_active = character_entry["Skill2"] != ""
-		new_character.skill_2_name = character_entry["Skill2"]
-		new_character.skill_2_level = int(character_entry["Skill2Lv"])
-		
-		new_character.culture = character_entry["Origin"]
-		new_character.artist = character_entry["Artist"]
 		# Attach to dictionary
-		characters_dictionary[new_character.name] = new_character
-	# Save dictionary as resource
-	cards_resource.CharacterCards = characters_dictionary
-	print("Created " + str(characters_dictionary.size()) + " characters.")
+		cards_dictionary[new_card.name] = new_card
+		# Save dictionary as resource
+	
+	match type:
+		CardProperties.CardTypes.Character:
+			target.CharacterCards = cards_dictionary
+		CardProperties.CardTypes.Item:
+			target.ItemCards = cards_dictionary
+		CardProperties.CardTypes.Creature:
+			target.CreatureCards = cards_dictionary
+			#add place later
+	
+	print("Created " + str(cards_dictionary.size()) + " cards.")
 
-func export_characters():
-	var base_path = "res://export/characters/"
+func set_stats(card, entry) :
+		card.brains = entry["Brains"]
+		card.brawn = entry["Brawn"]
+		card.tongue = entry["Tongue"]
+		card.hands = entry["Hands"]
+
+func set_skills(card, entry) :
+		card.skill_0_active = entry["Skill0"] != ""
+		card.skill_0_name = entry["Skill0"]
+		card.skill_0_level = int(entry["Skill0Lv"])
+		
+		card.skill_1_active = entry["Skill1"] != ""
+		card.skill_1_name = entry["Skill1"]
+		card.skill_1_level = int(entry["Skill1Lv"])
+		
+		card.skill_2_active = entry["Skill2"] != ""
+		card.skill_2_name = entry["Skill2"]
+		card.skill_2_level = int(entry["Skill2Lv"])
+
+func export_characters(path, data):
 	var subviewport : SubViewport = $CharacterExport
 	var renderer = $CharacterExport/CardRenderer
 	
-	var cards_data = load("res://cards/cards_data.tres")
-	var character_cards : Dictionary = cards_data.CharacterCards
-	for character_card in character_cards:
-		renderer.render_card(character_cards[character_card])
+	for character_card in data:
+		renderer.render_card(data[character_card])
 		subviewport.render_target_update_mode = SubViewport.UPDATE_ONCE
 		await RenderingServer.frame_pre_draw
 		await RenderingServer.frame_post_draw
 		var rendered_image = subviewport.get_texture().get_image()
 		rendered_image.convert(Image.FORMAT_RGBA8)
-		rendered_image.save_png(base_path + character_card + ".png")
+		rendered_image.save_png(path + character_card + ".png")
 	print("Export completed.")
 
 func _on_generate_characters():
-	generate_characters()
+	generate_cards(load("res://source_data/CharacterData.csv"), CardProperties.CardTypes.Character)
 
 func _on_download_characters():
 	sync_sheet("Portraits", "res://source_data/CharacterData.csv")
@@ -99,7 +145,9 @@ func _on_download_items():
 	sync_sheet("Items", "res://source_data/ItemData.csv")
 
 func _on_export_characters():
-	export_characters()
+	var cards_data = load("res://cards/cards_data.tres")
+	var character_cards : Dictionary = cards_data.CharacterCards
+	export_characters("res://export/characters/", character_cards)
 
 const HEADER = ["Content-Type: application/json; charset=UTF-8"]
 func request(url: String, callback: Callable, method: HTTPClient.Method = HTTPClient.METHOD_GET, query: Dictionary = {}, body: Dictionary = {}, headers: Array = HEADER, path: String = "") -> Error:
@@ -145,3 +193,23 @@ func sync_sheet(sheet, file) -> bool:
 
 func sync_sheet_callback(r, err) -> void:
 	pass
+
+
+func _on_generate_creatures():
+	generate_cards(load("res://source_data/CreatureData.csv"), CardProperties.CardTypes.Creature)
+
+
+func _on_generate_items():
+	generate_cards(load("res://source_data/ItemData.csv"), CardProperties.CardTypes.Item)
+
+
+func _on_export_items():
+	var cards_data = load("res://cards/cards_data.tres")
+	var character_cards : Dictionary = cards_data.ItemCards
+	export_characters("res://export/items/", character_cards)
+
+
+func _on_export_creatures():
+	var cards_data = load("res://cards/cards_data.tres")
+	var character_cards : Dictionary = cards_data.CreatureCards
+	export_characters("res://export/creatures/", character_cards)

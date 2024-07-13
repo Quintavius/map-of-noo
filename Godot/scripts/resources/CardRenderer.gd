@@ -19,10 +19,10 @@ func _render_random_card():
 func render_card(card_data : Variant):
 	# Confirm card data
 	var has_description : bool = card_data.description != ""
-	var has_skills : bool = card_data.skill_0_active || card_data.skill_1_active || card_data.skill_2_active
+	var has_skills : bool ="skill_0_active" in card_data &&  (card_data.skill_0_active || card_data.skill_1_active || card_data.skill_2_active)
 	var has_effect : bool = card_data.effect != ""
-	var has_attack : bool = "attack" in card_data
-	var has_defense : bool = "defense" in card_data
+	var has_attack : bool = "attack" in card_data && card_data.attack != CardProperties.DiceClass.None
+	var has_defense : bool = "defense" in card_data && card_data.defense != CardProperties.DiceClass.None
 	var has_stats: bool = "brains" in card_data
 	
 	# Toggle component visibility

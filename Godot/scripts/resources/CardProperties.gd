@@ -2,9 +2,9 @@
 extends Node
 class_name CardProperties 
 
-enum DiceClass{Light, Medium, Heavy}
+enum DiceClass{None, Light, Medium, Heavy}
 
-enum CardTypes{Character, Creature, Weapon, Attire, Consumable, Trap, Treasure, Accessory, Place}
+enum CardTypes{Character, Creature, Weapon, Item, Attire, Consumable, Trap, Treasure, Accessory, Place}
 
 enum Culture{
 	AetherMafia
