@@ -1,15 +1,15 @@
 [gd_scene load_steps=24 format=3 uid="uid://ci3f5scnttag6"]
 
 [ext_resource type="Script" path="res://scripts/resources/CardRenderer.gd" id="1_op1ox"]
+[ext_resource type="Texture2D" uid="uid://csp1r85qxvk4u" path="res://assets/card_art/characters/The Worldsplitter.png" id="3_4kj2f"]
 [ext_resource type="Theme" uid="uid://cvsrecu06my7j" path="res://theme.tres" id="3_dk4n7"]
-[ext_resource type="Texture2D" uid="uid://g3w8f6ks52h3" path="res://assets/card_art/items/default_item.webp" id="4_j4xy7"]
 [ext_resource type="Texture2D" uid="uid://dlq156prrfvna" path="res://assets/interface/cards/description_box.png" id="5_y6r58"]
 [ext_resource type="FontFile" uid="uid://cu21v3l257t3x" path="res://fonts/Paquito-Regular.otf" id="6_hbat2"]
 [ext_resource type="Texture2D" uid="uid://dyue72j47gpgv" path="res://assets/interface/cards/flourish.png" id="7_bjlcp"]
 [ext_resource type="FontFile" uid="uid://g2crxo054103" path="res://fonts/Paquito-Bold.otf" id="8_xvqhj"]
 [ext_resource type="PackedScene" uid="uid://bxutbed02mt3r" path="res://scenes/level_display.tscn" id="9_w1k3v"]
+[ext_resource type="Texture2D" uid="uid://cw3pyan63j048" path="res://assets/interface/cards/creatures_frame.png" id="10_fnpop"]
 [ext_resource type="Texture2D" uid="uid://7hnlifnfxq1x" path="res://assets/interface/cards/description_edge.png" id="10_qxkux"]
-[ext_resource type="Texture2D" uid="uid://cbvvdmhf8ru62" path="res://assets/interface/cards/characters_frame.png" id="11_v3v0c"]
 [ext_resource type="Texture2D" uid="uid://brn5cesf7x33q" path="res://assets/interface/cards/defense_bg.png" id="12_h51vp"]
 [ext_resource type="Texture2D" uid="uid://b6tuba1u61dms" path="res://assets/interface/cards/defense_main.png" id="13_rch4f"]
 [ext_resource type="Texture2D" uid="uid://dswwffk7pcola" path="res://assets/interface/cards/attack_bg.png" id="14_yphos"]
@@ -32,7 +32,6 @@ content_margin_top = 2.0
 content_margin_right = 8.0
 content_margin_bottom = 2.0
 texture = ExtResource("18_lxa78")
-modulate_color = Color(0.396078, 0.14902, 0.12549, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ush7i"]
 font = ExtResource("19_n4mcp")
@@ -45,7 +44,6 @@ content_margin_top = 2.0
 content_margin_right = 8.0
 content_margin_bottom = 2.0
 texture = ExtResource("20_7oehq")
-modulate_color = Color(0.396078, 0.14902, 0.12549, 1)
 
 [node name="CardRenderer" type="Control"]
 layout_mode = 3
@@ -72,7 +70,7 @@ offset_bottom = 1020.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_dk4n7")
-texture = ExtResource("4_j4xy7")
+texture = ExtResource("3_4kj2f")
 expand_mode = 1
 stretch_mode = 5
 
@@ -98,6 +96,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="DescriptionMargin" type="MarginContainer" parent="DescriptionPanel/DescriptionContents"]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 75
 theme_override_constants/margin_right = 75
@@ -110,17 +109,18 @@ theme = ExtResource("3_dk4n7")
 theme_override_colors/font_color = Color(0.196078, 0.180392, 0.164706, 1)
 theme_override_fonts/font = ExtResource("6_hbat2")
 theme_override_font_sizes/font_size = 30
-text = "Description for the item goes into this spot right here. Give it a bunch of text just to try it."
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="FlourishMargin" type="MarginContainer" parent="DescriptionPanel/DescriptionContents"]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_top = 18
 theme_override_constants/margin_bottom = 18
 
 [node name="Flourish" type="TextureRect" parent="DescriptionPanel/DescriptionContents/FlourishMargin"]
-modulate = Color(0.752941, 0.243137, 0.290196, 1)
+modulate = Color(0.537255, 0.498039, 0.458824, 1)
+self_modulate = Color(0.451, 0.384, 0.51, 1)
 layout_mode = 2
 texture = ExtResource("7_bjlcp")
 stretch_mode = 3
@@ -145,7 +145,7 @@ theme = ExtResource("3_dk4n7")
 theme_override_colors/font_color = Color(0.196078, 0.180392, 0.164706, 1)
 theme_override_fonts/font = ExtResource("8_xvqhj")
 theme_override_font_sizes/font_size = 30
-text = "Matter"
+text = "Spirit"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -168,7 +168,7 @@ theme = ExtResource("3_dk4n7")
 theme_override_colors/font_color = Color(0.196078, 0.180392, 0.164706, 1)
 theme_override_fonts/font = ExtResource("8_xvqhj")
 theme_override_font_sizes/font_size = 30
-text = "Matter"
+text = "Time"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -198,8 +198,26 @@ vertical_alignment = 1
 [node name="LevelDisplay" parent="DescriptionPanel/DescriptionContents/SkillsContainer/Skill2/SkillBox" instance=ExtResource("9_w1k3v")]
 layout_mode = 2
 
+[node name="EffectMargin" type="MarginContainer" parent="DescriptionPanel/DescriptionContents"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_right = 75
+
+[node name="Effect" type="Label" parent="DescriptionPanel/DescriptionContents/EffectMargin"]
+custom_minimum_size = Vector2(0.305, 0.54)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("3_dk4n7")
+theme_override_colors/font_color = Color(0.196078, 0.180392, 0.164706, 1)
+theme_override_fonts/font = ExtResource("6_hbat2")
+theme_override_font_sizes/font_size = 30
+text = "A force to be reckoned with."
+horizontal_alignment = 1
+autowrap_mode = 3
+
 [node name="DescriptionEdge" type="TextureRect" parent="."]
-modulate = Color(0.396078, 0.14902, 0.12549, 1)
+self_modulate = Color(0.243, 0.224, 0.302, 1)
 layout_mode = 2
 offset_left = 16.0
 offset_top = 629.0
@@ -215,53 +233,55 @@ stretch_mode = 2
 layout_mode = 0
 offset_right = 751.0
 offset_bottom = 1049.0
-texture = ExtResource("11_v3v0c")
+texture = ExtResource("10_fnpop")
 
 [node name="Defense" type="CenterContainer" parent="."]
 layout_mode = 2
-offset_left = 621.0
-offset_top = 844.0
-offset_right = 743.0
-offset_bottom = 923.0
+offset_left = 631.0
+offset_top = 845.0
+offset_right = 753.0
+offset_bottom = 924.0
 
 [node name="DefBack" type="TextureRect" parent="Defense"]
 layout_mode = 2
 texture = ExtResource("12_h51vp")
 
 [node name="DefFront" type="TextureRect" parent="Defense"]
-self_modulate = Color(0.396078, 0.14902, 0.12549, 1)
+self_modulate = Color(0.243, 0.224, 0.302, 1)
 layout_mode = 2
 texture = ExtResource("13_rch4f")
 
 [node name="Attack" type="CenterContainer" parent="."]
 layout_mode = 2
-offset_left = 13.0
-offset_top = 841.0
-offset_right = 135.0
-offset_bottom = 920.0
+offset_left = -1.0
+offset_top = 840.0
+offset_right = 121.0
+offset_bottom = 919.0
 
 [node name="AtkBack" type="TextureRect" parent="Attack"]
 layout_mode = 2
 texture = ExtResource("14_yphos")
 
 [node name="AtkFront" type="TextureRect" parent="Attack"]
-self_modulate = Color(0.396078, 0.14902, 0.12549, 1)
+self_modulate = Color(0.243, 0.224, 0.302, 1)
 layout_mode = 2
 texture = ExtResource("15_aosct")
 
 [node name="DefDiceWeight" parent="." instance=ExtResource("16_my5pp")]
+self_modulate = Color(0.451, 0.384, 0.51, 1)
 layout_mode = 0
-offset_left = 684.0
-offset_top = 864.0
-offset_right = 729.0
-offset_bottom = 896.0
+offset_left = 694.0
+offset_top = 865.0
+offset_right = 739.0
+offset_bottom = 897.0
 
 [node name="AtkDiceWeight" parent="." instance=ExtResource("16_my5pp")]
+self_modulate = Color(0.451, 0.384, 0.51, 1)
 layout_mode = 0
-offset_left = 66.0
-offset_top = 864.0
-offset_right = 111.0
-offset_bottom = 896.0
+offset_left = 52.0
+offset_top = 863.0
+offset_right = 97.0
+offset_bottom = 895.0
 
 [node name="BrainLevel" parent="." instance=ExtResource("9_w1k3v")]
 layout_mode = 0
@@ -302,7 +322,7 @@ theme = ExtResource("3_dk4n7")
 theme_override_colors/font_color = Color(0.945098, 0.882353, 0.835294, 1)
 theme_override_fonts/font = ExtResource("17_td55t")
 theme_override_font_sizes/font_size = 80
-text = "Default Sword"
+text = "The Worldsplitter"
 vertical_alignment = 1
 
 [node name="Era" type="Label" parent="."]
@@ -321,6 +341,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Origin" type="PanelContainer" parent="."]
+self_modulate = Color(0.243, 0.224, 0.302, 1)
 layout_mode = 0
 offset_left = 52.0
 offset_top = 977.0
@@ -330,10 +351,11 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_0v6kw")
 
 [node name="OriginName" type="Label" parent="Origin"]
 layout_mode = 2
-text = "Emerald Garden"
+text = "Heart of Noo"
 label_settings = SubResource("LabelSettings_ush7i")
 
 [node name="Artist" type="PanelContainer" parent="."]
+self_modulate = Color(0.243, 0.224, 0.302, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
@@ -350,6 +372,6 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_lvmdx")
 [node name="ArtistName" type="Label" parent="Artist"]
 layout_mode = 2
 size_flags_horizontal = 8
-text = "Paladius Stex"
+text = "Ponder"
 label_settings = SubResource("LabelSettings_ush7i")
 horizontal_alignment = 2
