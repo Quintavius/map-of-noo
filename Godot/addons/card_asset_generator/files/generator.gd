@@ -17,9 +17,6 @@ func _ready():
 	#file_dialog.file_selected.connect(_on_add_file_selected)
 	#add_child(file_dialog)
 
-func download_characters():
-	sync_sheet()
-
 func generate_characters():
 	var cards_resource = load("res://cards/cards_data.tres")
 	var character_data = load("res://source_data/CharacterData.csv")
@@ -29,6 +26,7 @@ func generate_characters():
 	var characters_dictionary = {}
 	for character_entry in high_ages_only:
 		var new_character = Character.new()
+		new_character.card_type = CardProperties.CardTypes.Character
 		
 		# Extract all necessary info
 		new_character.name = character_entry["Name"]
@@ -92,7 +90,13 @@ func _on_generate_characters():
 	generate_characters()
 
 func _on_download_characters():
-	download_characters()
+	sync_sheet("Portraits", "res://source_data/CharacterData.csv")
+
+func _on_download_creatures():
+	sync_sheet("Creatures", "res://source_data/CreatureData.csv")
+
+func _on_download_items():
+	sync_sheet("Items", "res://source_data/ItemData.csv")
 
 func _on_export_characters():
 	export_characters()
@@ -134,12 +138,10 @@ func _request_completed(result, response_code, headers, body, callback: Callable
 	if err != OK:
 		printerr("ERROR response: ", response)
 
-func sync_sheet() -> bool:
+func sync_sheet(sheet, file) -> bool:
 	var url := "https://docs.google.com/spreadsheets/d/" + "1QBlhDNbKv8KKqeYgz6W9YZ88JgUDJdL4mCPGo6OTXgE" + "/gviz/tq"
-	request(url, func(r, err): sync_sheet_callback(r, err), HTTPClient.METHOD_GET, {"tqx": "out:csv", "sheet": "Portraits", "tq":"SELECT * WHERE A IS NOT NULL", "headers":"1"}, {}, [], "res://source_data/CharacterData.csv")
+	request(url, func(r, err): sync_sheet_callback(r, err), HTTPClient.METHOD_GET, {"tqx": "out:csv", "sheet": sheet, "tq":"SELECT * WHERE A IS NOT NULL", "headers":"1"}, {}, [], file)
 	return true
 
 func sync_sheet_callback(r, err) -> void:
 	pass
-
-

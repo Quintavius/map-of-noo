@@ -1,0 +1,363 @@
+[gd_scene load_steps=25 format=3 uid="uid://ci3f5scnttag6"]
+
+[ext_resource type="Script" path="res://scripts/resources/CardRenderer.gd" id="1_op1ox"]
+[ext_resource type="Texture2D" uid="uid://br8hmdf17a4df" path="res://assets/card_art/characters/Loppit Hupplequim.png" id="3_abebt"]
+[ext_resource type="Theme" uid="uid://cvsrecu06my7j" path="res://theme.tres" id="3_dk4n7"]
+[ext_resource type="Texture2D" uid="uid://dlq156prrfvna" path="res://assets/interface/cards/description_box.png" id="5_y6r58"]
+[ext_resource type="FontFile" uid="uid://cu21v3l257t3x" path="res://fonts/Paquito-Regular.otf" id="6_hbat2"]
+[ext_resource type="Texture2D" uid="uid://dyue72j47gpgv" path="res://assets/interface/cards/flourish.png" id="7_bjlcp"]
+[ext_resource type="FontFile" uid="uid://g2crxo054103" path="res://fonts/Paquito-Bold.otf" id="8_xvqhj"]
+[ext_resource type="PackedScene" uid="uid://bxutbed02mt3r" path="res://scenes/level_display.tscn" id="9_w1k3v"]
+[ext_resource type="Texture2D" uid="uid://7hnlifnfxq1x" path="res://assets/interface/cards/description_edge.png" id="10_qxkux"]
+[ext_resource type="Texture2D" uid="uid://cbvvdmhf8ru62" path="res://assets/interface/cards/characters_frame.png" id="11_v3v0c"]
+[ext_resource type="Texture2D" uid="uid://brn5cesf7x33q" path="res://assets/interface/cards/defense_bg.png" id="12_h51vp"]
+[ext_resource type="Texture2D" uid="uid://b6tuba1u61dms" path="res://assets/interface/cards/defense_main.png" id="13_rch4f"]
+[ext_resource type="Texture2D" uid="uid://dswwffk7pcola" path="res://assets/interface/cards/attack_bg.png" id="14_yphos"]
+[ext_resource type="Texture2D" uid="uid://dyvix1xgsdjvl" path="res://assets/interface/cards/attack_main.png" id="15_aosct"]
+[ext_resource type="Texture2D" uid="uid://d276pjn4cpoul" path="res://assets/interface/cards/dice_light.png" id="15_wh2ho"]
+[ext_resource type="PackedScene" uid="uid://bberqd018cwn5" path="res://scenes/dice_weight.tscn" id="16_my5pp"]
+[ext_resource type="FontFile" uid="uid://cmmtl7hoyey32" path="res://fonts/WitheringAway-Regular.otf" id="17_td55t"]
+[ext_resource type="Texture2D" uid="uid://dnjq71ipi8x14" path="res://assets/interface/cards/origin.png" id="18_lxa78"]
+[ext_resource type="FontFile" uid="uid://cooo2ejvyimwl" path="res://fonts/Paquito-Medium.otf" id="19_n4mcp"]
+[ext_resource type="Texture2D" uid="uid://takjl1xjf47b" path="res://assets/interface/cards/artist.png" id="20_7oehq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pmkl8"]
+content_margin_bottom = 52.0
+texture = ExtResource("5_y6r58")
+texture_margin_top = 39.0
+region_rect = Rect2(0, 50, 719, 346)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0v6kw"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+texture = ExtResource("18_lxa78")
+modulate_color = Color(0.396078, 0.14902, 0.12549, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ush7i"]
+font = ExtResource("19_n4mcp")
+font_size = 20
+font_color = Color(0.945098, 0.882353, 0.835294, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lvmdx"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+texture = ExtResource("20_7oehq")
+modulate_color = Color(0.396078, 0.14902, 0.12549, 1)
+
+[node name="CardRenderer" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -375.0
+offset_top = -525.0
+offset_right = 375.0
+offset_bottom = 525.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_op1ox")
+
+[node name="Image" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(690, 990)
+layout_mode = 2
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 720.0
+offset_bottom = 1020.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_dk4n7")
+texture = ExtResource("3_abebt")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DescriptionPanel" type="PanelContainer" parent="."]
+clip_children = 2
+custom_minimum_size = Vector2(719, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -359.0
+offset_top = -128.0
+offset_right = 360.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_pmkl8")
+
+[node name="DescriptionContents" type="VBoxContainer" parent="DescriptionPanel"]
+layout_mode = 2
+alignment = 1
+
+[node name="DescriptionMargin" type="MarginContainer" parent="DescriptionPanel/DescriptionContents"]
+layout_mode = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_right = 75
+
+[node name="Description" type="Label" parent="DescriptionPanel/DescriptionContents/DescriptionMargin"]
+custom_minimum_size = Vector2(0.305, 0.54)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("3_dk4n7")
+theme_override_colors/font_color = Color(0.196078, 0.180392, 0.164706, 1)
+theme_override_fonts/font = ExtResource("6_hbat2")
+theme_override_font_sizes/font_size = 30
+text = "Gunner of the Secorran First Retrieval Unit."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="FlourishMargin" type="MarginContainer" parent="DescriptionPanel/DescriptionContents"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_bottom = 18
+
+[node name="Flourish" type="TextureRect" parent="DescriptionPanel/DescriptionContents/FlourishMargin"]
+modulate = Color(0.537255, 0.498039, 0.458824, 1)
+self_modulate = Color(0.451, 0.384, 0.51, 1)
+layout_mode = 2
+texture = ExtResource("7_bjlcp")
+stretch_mode = 3
+
+[node name="SkillsContainer" type="HBoxContainer" parent="DescriptionPanel/DescriptionContents"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="Skill0" type="MarginContainer" parent="DescriptionPanel/DescriptionContents/SkillsContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 42
+theme_override_constants/margin_right = 42
+
+[node name="SkillBox" type="VBoxContainer" parent="DescriptionPanel/DescriptionContents/SkillsContainer/Skill0"]
+layout_mode = 2
+
+[node name="SkillName" type="Label" parent="DescriptionPanel/DescriptionContents/SkillsContainer/Skill0/SkillBox"]
+custom_minimum_size = Vector2(0.305, 0.54)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("3_dk4n7")
+theme_override_colors/font_color = Color(0.196078, 0.180392, 0.164706, 1)
+theme_override_fonts/font = ExtResource("8_xvqhj")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelDisplay" parent="DescriptionPanel/DescriptionContents/SkillsContainer/Skill0/SkillBox" instance=ExtResource("9_w1k3v")]
+layout_mode = 2
+
+[node name="Skill1" type="MarginContainer" parent="DescriptionPanel/DescriptionContents/SkillsContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 42
+theme_override_constants/margin_right = 42
+
+[node name="SkillBox" type="VBoxContainer" parent="DescriptionPanel/DescriptionContents/SkillsContainer/Skill1"]
+layout_mode = 2
+
+[node name="SkillName" type="Label" parent="DescriptionPanel/DescriptionContents/SkillsContainer/Skill1/SkillBox"]
+custom_minimum_size = Vector2(0.305, 0.54)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("3_dk4n7")
+theme_override_colors/font_color = Color(0.196078, 0.180392, 0.164706, 1)
+theme_override_fonts/font = ExtResource("8_xvqhj")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelDisplay" parent="DescriptionPanel/DescriptionContents/SkillsContainer/Skill1/SkillBox" instance=ExtResource("9_w1k3v")]
+layout_mode = 2
+
+[node name="Skill2" type="MarginContainer" parent="DescriptionPanel/DescriptionContents/SkillsContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 42
+theme_override_constants/margin_right = 42
+
+[node name="SkillBox" type="VBoxContainer" parent="DescriptionPanel/DescriptionContents/SkillsContainer/Skill2"]
+layout_mode = 2
+
+[node name="SkillName" type="Label" parent="DescriptionPanel/DescriptionContents/SkillsContainer/Skill2/SkillBox"]
+custom_minimum_size = Vector2(0.305, 0.54)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("3_dk4n7")
+theme_override_colors/font_color = Color(0.196078, 0.180392, 0.164706, 1)
+theme_override_fonts/font = ExtResource("8_xvqhj")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelDisplay" parent="DescriptionPanel/DescriptionContents/SkillsContainer/Skill2/SkillBox" instance=ExtResource("9_w1k3v")]
+layout_mode = 2
+
+[node name="DescriptionEdge" type="TextureRect" parent="."]
+modulate = Color(0.396078, 0.14902, 0.12549, 1)
+self_modulate = Color(0.243, 0.224, 0.302, 1)
+layout_mode = 2
+offset_left = 16.0
+offset_top = 629.0
+offset_right = 735.0
+offset_bottom = 1025.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+texture = ExtResource("10_qxkux")
+stretch_mode = 2
+
+[node name="Frame" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 751.0
+offset_bottom = 1049.0
+texture = ExtResource("11_v3v0c")
+
+[node name="Defense" type="CenterContainer" parent="."]
+layout_mode = 2
+offset_left = 631.0
+offset_top = 845.0
+offset_right = 753.0
+offset_bottom = 924.0
+
+[node name="DefBack" type="TextureRect" parent="Defense"]
+layout_mode = 2
+texture = ExtResource("12_h51vp")
+
+[node name="DefFront" type="TextureRect" parent="Defense"]
+self_modulate = Color(0.396078, 0.14902, 0.12549, 1)
+layout_mode = 2
+texture = ExtResource("13_rch4f")
+
+[node name="Attack" type="CenterContainer" parent="."]
+layout_mode = 2
+offset_left = -1.0
+offset_top = 840.0
+offset_right = 121.0
+offset_bottom = 919.0
+
+[node name="AtkBack" type="TextureRect" parent="Attack"]
+layout_mode = 2
+texture = ExtResource("14_yphos")
+
+[node name="AtkFront" type="TextureRect" parent="Attack"]
+self_modulate = Color(0.396078, 0.14902, 0.12549, 1)
+layout_mode = 2
+texture = ExtResource("15_aosct")
+
+[node name="DefDiceWeight" parent="." instance=ExtResource("16_my5pp")]
+self_modulate = Color(0.451, 0.384, 0.51, 1)
+layout_mode = 0
+offset_left = 694.0
+offset_top = 865.0
+offset_right = 739.0
+offset_bottom = 897.0
+
+[node name="AtkDiceWeight" parent="." instance=ExtResource("16_my5pp")]
+self_modulate = Color(0.451, 0.384, 0.51, 1)
+layout_mode = 0
+offset_left = 52.0
+offset_top = 863.0
+offset_right = 97.0
+offset_bottom = 895.0
+texture = ExtResource("15_wh2ho")
+
+[node name="BrainLevel" parent="." instance=ExtResource("9_w1k3v")]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 219.0
+offset_right = 110.0
+offset_bottom = 239.0
+
+[node name="BrawnLevel" parent="." instance=ExtResource("9_w1k3v")]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 340.0
+offset_right = 110.0
+offset_bottom = 360.0
+
+[node name="TongueLevel" parent="." instance=ExtResource("9_w1k3v")]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 454.0
+offset_right = 110.0
+offset_bottom = 474.0
+
+[node name="HandsLevel" parent="." instance=ExtResource("9_w1k3v")]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 572.0
+offset_right = 110.0
+offset_bottom = 592.0
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 2
+offset_left = 36.0
+offset_top = 40.0
+offset_right = 559.0
+offset_bottom = 122.0
+grow_vertical = 2
+theme = ExtResource("3_dk4n7")
+theme_override_colors/font_color = Color(0.945098, 0.882353, 0.835294, 1)
+theme_override_fonts/font = ExtResource("17_td55t")
+theme_override_font_sizes/font_size = 80
+text = "Loppit Hupplequim"
+vertical_alignment = 1
+
+[node name="Era" type="Label" parent="."]
+layout_mode = 2
+offset_left = 585.0
+offset_top = 38.0
+offset_right = 607.0
+offset_bottom = 120.0
+grow_vertical = 2
+theme = ExtResource("3_dk4n7")
+theme_override_colors/font_color = Color(0.945098, 0.882353, 0.835294, 1)
+theme_override_fonts/font = ExtResource("17_td55t")
+theme_override_font_sizes/font_size = 37
+text = "I"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Origin" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 977.0
+offset_right = 205.0
+offset_bottom = 1017.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_0v6kw")
+
+[node name="OriginName" type="Label" parent="Origin"]
+layout_mode = 2
+text = "Secorras Republic "
+label_settings = SubResource("LabelSettings_ush7i")
+
+[node name="Artist" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -70.0
+offset_right = -53.0
+offset_bottom = -36.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_lvmdx")
+
+[node name="ArtistName" type="Label" parent="Artist"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Lily Lovelace"
+label_settings = SubResource("LabelSettings_ush7i")
+horizontal_alignment = 2

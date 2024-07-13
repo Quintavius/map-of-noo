@@ -1,6 +1,8 @@
+@tool
 extends Resource
 class_name Card
 
+var card_type : CardProperties.CardTypes
 @export var name : String
 @export var era : String
 @export var culture : String

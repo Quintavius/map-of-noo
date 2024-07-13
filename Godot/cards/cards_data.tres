@@ -12,196 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://br8hmdf17a4df" path="res://assets/card_art/characters/Loppit Hupplequim.png" id="9_l8p0c"]
 [ext_resource type="Texture2D" uid="uid://b2fiq3p16swxm" path="res://assets/card_art/characters/Bron Lorrix.png" id="10_ggumg"]
 
-[sub_resource type="Resource" id="Resource_b5mde"]
-script = ExtResource("1_ouqc7")
-species = 0
-inventory = Array[Resource("res://scripts/resources/Item.gd")]([])
-accessories = Array[Resource("res://scripts/resources/Item.gd")]([])
-state = 0
-pronouns = ""
-brains = 1
-brains_exp = 0
-brawn = 1
-brawn_exp = 0
-tongue = 1
-tongue_exp = 0
-hands = 3
-hands_exp = 0
-attack = 0
-defense = 0
-skill_0_active = false
-skill_0_name = ""
-skill_0_level = 0
-skill_0_exp = 0
-skill_1_active = false
-skill_1_name = ""
-skill_1_level = 0
-skill_1_exp = 0
-skill_2_active = false
-skill_2_name = ""
-skill_2_level = 0
-skill_2_exp = 0
-name = "Bitcoin"
-era = "High Ages"
-culture = ""
-artist = "Sarla the Wrongdoer"
-description = ""
-effect = ""
-legendary = false
-
-[sub_resource type="Resource" id="Resource_bs6jx"]
-script = ExtResource("1_ouqc7")
-species = 0
-inventory = Array[Resource("res://scripts/resources/Item.gd")]([])
-accessories = Array[Resource("res://scripts/resources/Item.gd")]([])
-state = 0
-pronouns = ""
-brains = 1
-brains_exp = 0
-brawn = 2
-brawn_exp = 0
-tongue = 1
-tongue_exp = 0
-hands = 2
-hands_exp = 0
-attack = 2
-defense = 1
-skill_0_active = false
-skill_0_name = ""
-skill_0_level = 0
-skill_0_exp = 0
-skill_1_active = false
-skill_1_name = ""
-skill_1_level = 0
-skill_1_exp = 0
-skill_2_active = false
-skill_2_name = ""
-skill_2_level = 0
-skill_2_exp = 0
-name = "Bron Lorrix"
-era = "High Ages"
-culture = "Secorras Republic "
-artist = "Lily Lovelace"
-description = "Swordsman of the Secorran First Retrieval Unit."
-effect = ""
-image = ExtResource("10_ggumg")
-legendary = false
-
-[sub_resource type="Resource" id="Resource_pamgf"]
-script = ExtResource("1_ouqc7")
-species = 0
-inventory = Array[Resource("res://scripts/resources/Item.gd")]([])
-accessories = Array[Resource("res://scripts/resources/Item.gd")]([])
-state = 0
-pronouns = ""
-brains = 0
-brains_exp = 0
-brawn = 2
-brawn_exp = 0
-tongue = 0
-tongue_exp = 0
-hands = 0
-hands_exp = 0
-attack = 1
-defense = 0
-skill_0_active = false
-skill_0_name = ""
-skill_0_level = 0
-skill_0_exp = 0
-skill_1_active = false
-skill_1_name = ""
-skill_1_level = 0
-skill_1_exp = 0
-skill_2_active = false
-skill_2_name = ""
-skill_2_level = 0
-skill_2_exp = 0
-name = "Brubsh"
-era = "High Ages"
-culture = "Emerald Garden"
-artist = "Mik Gabson"
-description = "[Incoherent mumbling]"
-effect = ""
-image = ExtResource("6_ku6ri")
-legendary = false
-
-[sub_resource type="Resource" id="Resource_i7ise"]
-script = ExtResource("1_ouqc7")
-species = 0
-inventory = Array[Resource("res://scripts/resources/Item.gd")]([])
-accessories = Array[Resource("res://scripts/resources/Item.gd")]([])
-state = 0
-pronouns = ""
-brains = 2
-brains_exp = 0
-brawn = 1
-brawn_exp = 0
-tongue = 1
-tongue_exp = 0
-hands = 0
-hands_exp = 0
-attack = 0
-defense = 0
-skill_0_active = true
-skill_0_name = "Archeology"
-skill_0_level = 1
-skill_0_exp = 0
-skill_1_active = false
-skill_1_name = ""
-skill_1_level = 0
-skill_1_exp = 0
-skill_2_active = false
-skill_2_name = ""
-skill_2_level = 0
-skill_2_exp = 0
-name = "Flip"
-era = "High Ages"
-culture = "Emerald Garden"
-artist = "Mik Gabson"
-description = "The self-appointed archeologist of Scritterscrot."
-effect = ""
-image = ExtResource("4_sjg2e")
-legendary = false
-
-[sub_resource type="Resource" id="Resource_elhwo"]
-script = ExtResource("1_ouqc7")
-species = 0
-inventory = Array[Resource("res://scripts/resources/Item.gd")]([])
-accessories = Array[Resource("res://scripts/resources/Item.gd")]([])
-state = 0
-pronouns = ""
-brains = 2
-brains_exp = 0
-brawn = 1
-brawn_exp = 0
-tongue = 3
-tongue_exp = 0
-hands = 1
-hands_exp = 0
-attack = 0
-defense = 2
-skill_0_active = false
-skill_0_name = ""
-skill_0_level = 0
-skill_0_exp = 0
-skill_1_active = false
-skill_1_name = ""
-skill_1_level = 0
-skill_1_exp = 0
-skill_2_active = false
-skill_2_name = ""
-skill_2_level = 0
-skill_2_exp = 0
-name = "Loppit Hupplequim"
-era = "High Ages"
-culture = "Secorras Republic "
-artist = "Lily Lovelace"
-description = "Gunner of the Secorran First Retrieval Unit."
-effect = ""
-image = ExtResource("9_l8p0c")
-legendary = false
-
-[sub_resource type="Resource" id="Resource_mb1e8"]
+[sub_resource type="Resource" id="Resource_h57xr"]
 script = ExtResource("1_ouqc7")
 species = 0
 inventory = Array[Resource("res://scripts/resources/Item.gd")]([])
@@ -239,121 +50,7 @@ effect = ""
 image = ExtResource("1_fdt66")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_jn0q7"]
-script = ExtResource("1_ouqc7")
-species = 0
-inventory = Array[Resource("res://scripts/resources/Item.gd")]([])
-accessories = Array[Resource("res://scripts/resources/Item.gd")]([])
-state = 0
-pronouns = ""
-brains = 2
-brains_exp = 0
-brawn = 0
-brawn_exp = 0
-tongue = 1
-tongue_exp = 0
-hands = 2
-hands_exp = 0
-attack = 0
-defense = 0
-skill_0_active = true
-skill_0_name = "Herbalism"
-skill_0_level = 2
-skill_0_exp = 0
-skill_1_active = false
-skill_1_name = ""
-skill_1_level = 0
-skill_1_exp = 0
-skill_2_active = false
-skill_2_name = ""
-skill_2_level = 0
-skill_2_exp = 0
-name = "Piff"
-era = "High Ages"
-culture = "Emerald Garden"
-artist = "Mik Gabson"
-description = "Herbalist and owner of the Musty Fungus"
-effect = ""
-image = ExtResource("7_dr4ka")
-legendary = false
-
-[sub_resource type="Resource" id="Resource_qt1jo"]
-script = ExtResource("1_ouqc7")
-species = 0
-inventory = Array[Resource("res://scripts/resources/Item.gd")]([])
-accessories = Array[Resource("res://scripts/resources/Item.gd")]([])
-state = 0
-pronouns = ""
-brains = 1
-brains_exp = 0
-brawn = 3
-brawn_exp = 0
-tongue = 2
-tongue_exp = 0
-hands = 1
-hands_exp = 0
-attack = 1
-defense = 1
-skill_0_active = true
-skill_0_name = "Radiance"
-skill_0_level = 2
-skill_0_exp = 0
-skill_1_active = false
-skill_1_name = ""
-skill_1_level = 0
-skill_1_exp = 0
-skill_2_active = false
-skill_2_name = ""
-skill_2_level = 0
-skill_2_exp = 0
-name = "Quek Porrim"
-era = "High Ages"
-culture = "Secorras Republic "
-artist = "Lily Lovelace"
-description = "Scout and leader of the Secorran First Retrieval Unit."
-effect = ""
-image = ExtResource("8_w8se0")
-legendary = false
-
-[sub_resource type="Resource" id="Resource_4wh5v"]
-script = ExtResource("1_ouqc7")
-species = 0
-inventory = Array[Resource("res://scripts/resources/Item.gd")]([])
-accessories = Array[Resource("res://scripts/resources/Item.gd")]([])
-state = 0
-pronouns = ""
-brains = 1
-brains_exp = 0
-brawn = 1
-brawn_exp = 0
-tongue = 2
-tongue_exp = 0
-hands = 2
-hands_exp = 0
-attack = 0
-defense = 0
-skill_0_active = true
-skill_0_name = "Cooking"
-skill_0_level = 2
-skill_0_exp = 0
-skill_1_active = false
-skill_1_name = ""
-skill_1_level = 0
-skill_1_exp = 0
-skill_2_active = false
-skill_2_name = ""
-skill_2_level = 0
-skill_2_exp = 0
-name = "Spubble"
-era = "High Ages"
-culture = "Emerald Garden"
-artist = "Mik Gabson"
-description = "Owner of Scritter Inn, and maker of the best pies in all of Emerald Garden."
-effect = ""
-image = ExtResource("5_xwv1g")
-legendary = false
-
-[sub_resource type="Resource" id="Resource_8es08"]
+[sub_resource type="Resource" id="Resource_1ymmi"]
 script = ExtResource("1_ouqc7")
 species = 0
 inventory = Array[Resource("res://scripts/resources/Item.gd")]([])
@@ -391,7 +88,310 @@ effect = ""
 image = ExtResource("3_ahgsy")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_dfrn5"]
+[sub_resource type="Resource" id="Resource_th2gf"]
+script = ExtResource("1_ouqc7")
+species = 0
+inventory = Array[Resource("res://scripts/resources/Item.gd")]([])
+accessories = Array[Resource("res://scripts/resources/Item.gd")]([])
+state = 0
+pronouns = ""
+brains = 2
+brains_exp = 0
+brawn = 1
+brawn_exp = 0
+tongue = 1
+tongue_exp = 0
+hands = 0
+hands_exp = 0
+attack = 0
+defense = 0
+skill_0_active = true
+skill_0_name = "Archeology"
+skill_0_level = 1
+skill_0_exp = 0
+skill_1_active = false
+skill_1_name = ""
+skill_1_level = 0
+skill_1_exp = 0
+skill_2_active = false
+skill_2_name = ""
+skill_2_level = 0
+skill_2_exp = 0
+name = "Flip"
+era = "High Ages"
+culture = "Emerald Garden"
+artist = "Mik Gabson"
+description = "The self-appointed archeologist of Scritterscrot."
+effect = ""
+image = ExtResource("4_sjg2e")
+legendary = false
+
+[sub_resource type="Resource" id="Resource_wq2u4"]
+script = ExtResource("1_ouqc7")
+species = 0
+inventory = Array[Resource("res://scripts/resources/Item.gd")]([])
+accessories = Array[Resource("res://scripts/resources/Item.gd")]([])
+state = 0
+pronouns = ""
+brains = 1
+brains_exp = 0
+brawn = 1
+brawn_exp = 0
+tongue = 2
+tongue_exp = 0
+hands = 2
+hands_exp = 0
+attack = 0
+defense = 0
+skill_0_active = true
+skill_0_name = "Cooking"
+skill_0_level = 2
+skill_0_exp = 0
+skill_1_active = false
+skill_1_name = ""
+skill_1_level = 0
+skill_1_exp = 0
+skill_2_active = false
+skill_2_name = ""
+skill_2_level = 0
+skill_2_exp = 0
+name = "Spubble"
+era = "High Ages"
+culture = "Emerald Garden"
+artist = "Mik Gabson"
+description = "Owner of Scritter Inn, and maker of the best pies in all of Emerald Garden."
+effect = ""
+image = ExtResource("5_xwv1g")
+legendary = false
+
+[sub_resource type="Resource" id="Resource_n0ojw"]
+script = ExtResource("1_ouqc7")
+species = 0
+inventory = Array[Resource("res://scripts/resources/Item.gd")]([])
+accessories = Array[Resource("res://scripts/resources/Item.gd")]([])
+state = 0
+pronouns = ""
+brains = 0
+brains_exp = 0
+brawn = 2
+brawn_exp = 0
+tongue = 0
+tongue_exp = 0
+hands = 0
+hands_exp = 0
+attack = 1
+defense = 0
+skill_0_active = false
+skill_0_name = ""
+skill_0_level = 0
+skill_0_exp = 0
+skill_1_active = false
+skill_1_name = ""
+skill_1_level = 0
+skill_1_exp = 0
+skill_2_active = false
+skill_2_name = ""
+skill_2_level = 0
+skill_2_exp = 0
+name = "Brubsh"
+era = "High Ages"
+culture = "Emerald Garden"
+artist = "Mik Gabson"
+description = "[Incoherent mumbling]"
+effect = ""
+image = ExtResource("6_ku6ri")
+legendary = false
+
+[sub_resource type="Resource" id="Resource_wqpfx"]
+script = ExtResource("1_ouqc7")
+species = 0
+inventory = Array[Resource("res://scripts/resources/Item.gd")]([])
+accessories = Array[Resource("res://scripts/resources/Item.gd")]([])
+state = 0
+pronouns = ""
+brains = 2
+brains_exp = 0
+brawn = 0
+brawn_exp = 0
+tongue = 1
+tongue_exp = 0
+hands = 2
+hands_exp = 0
+attack = 0
+defense = 0
+skill_0_active = true
+skill_0_name = "Herbalism"
+skill_0_level = 2
+skill_0_exp = 0
+skill_1_active = false
+skill_1_name = ""
+skill_1_level = 0
+skill_1_exp = 0
+skill_2_active = false
+skill_2_name = ""
+skill_2_level = 0
+skill_2_exp = 0
+name = "Piff"
+era = "High Ages"
+culture = "Emerald Garden"
+artist = "Mik Gabson"
+description = "Herbalist and owner of the Musty Fungus"
+effect = ""
+image = ExtResource("7_dr4ka")
+legendary = false
+
+[sub_resource type="Resource" id="Resource_61d4c"]
+script = ExtResource("1_ouqc7")
+species = 0
+inventory = Array[Resource("res://scripts/resources/Item.gd")]([])
+accessories = Array[Resource("res://scripts/resources/Item.gd")]([])
+state = 0
+pronouns = ""
+brains = 1
+brains_exp = 0
+brawn = 3
+brawn_exp = 0
+tongue = 2
+tongue_exp = 0
+hands = 1
+hands_exp = 0
+attack = 1
+defense = 1
+skill_0_active = true
+skill_0_name = "Radiance"
+skill_0_level = 2
+skill_0_exp = 0
+skill_1_active = false
+skill_1_name = ""
+skill_1_level = 0
+skill_1_exp = 0
+skill_2_active = false
+skill_2_name = ""
+skill_2_level = 0
+skill_2_exp = 0
+name = "Quek Porrim"
+era = "High Ages"
+culture = "Secorras Republic "
+artist = "Lily Lovelace"
+description = "Scout and leader of the Secorran First Retrieval Unit."
+effect = ""
+image = ExtResource("8_w8se0")
+legendary = false
+
+[sub_resource type="Resource" id="Resource_kq5a8"]
+script = ExtResource("1_ouqc7")
+species = 0
+inventory = Array[Resource("res://scripts/resources/Item.gd")]([])
+accessories = Array[Resource("res://scripts/resources/Item.gd")]([])
+state = 0
+pronouns = ""
+brains = 2
+brains_exp = 0
+brawn = 1
+brawn_exp = 0
+tongue = 3
+tongue_exp = 0
+hands = 1
+hands_exp = 0
+attack = 0
+defense = 2
+skill_0_active = false
+skill_0_name = ""
+skill_0_level = 0
+skill_0_exp = 0
+skill_1_active = false
+skill_1_name = ""
+skill_1_level = 0
+skill_1_exp = 0
+skill_2_active = false
+skill_2_name = ""
+skill_2_level = 0
+skill_2_exp = 0
+name = "Loppit Hupplequim"
+era = "High Ages"
+culture = "Secorras Republic "
+artist = "Lily Lovelace"
+description = "Gunner of the Secorran First Retrieval Unit."
+effect = ""
+image = ExtResource("9_l8p0c")
+legendary = false
+
+[sub_resource type="Resource" id="Resource_jmhsa"]
+script = ExtResource("1_ouqc7")
+species = 0
+inventory = Array[Resource("res://scripts/resources/Item.gd")]([])
+accessories = Array[Resource("res://scripts/resources/Item.gd")]([])
+state = 0
+pronouns = ""
+brains = 1
+brains_exp = 0
+brawn = 2
+brawn_exp = 0
+tongue = 1
+tongue_exp = 0
+hands = 2
+hands_exp = 0
+attack = 2
+defense = 1
+skill_0_active = false
+skill_0_name = ""
+skill_0_level = 0
+skill_0_exp = 0
+skill_1_active = false
+skill_1_name = ""
+skill_1_level = 0
+skill_1_exp = 0
+skill_2_active = false
+skill_2_name = ""
+skill_2_level = 0
+skill_2_exp = 0
+name = "Bron Lorrix"
+era = "High Ages"
+culture = "Secorras Republic "
+artist = "Lily Lovelace"
+description = "Swordsman of the Secorran First Retrieval Unit."
+effect = ""
+image = ExtResource("10_ggumg")
+legendary = false
+
+[sub_resource type="Resource" id="Resource_534nb"]
+script = ExtResource("1_ouqc7")
+species = 0
+inventory = Array[Resource("res://scripts/resources/Item.gd")]([])
+accessories = Array[Resource("res://scripts/resources/Item.gd")]([])
+state = 0
+pronouns = ""
+brains = 1
+brains_exp = 0
+brawn = 1
+brawn_exp = 0
+tongue = 1
+tongue_exp = 0
+hands = 3
+hands_exp = 0
+attack = 0
+defense = 0
+skill_0_active = false
+skill_0_name = ""
+skill_0_level = 0
+skill_0_exp = 0
+skill_1_active = false
+skill_1_name = ""
+skill_1_level = 0
+skill_1_exp = 0
+skill_2_active = false
+skill_2_name = ""
+skill_2_level = 0
+skill_2_exp = 0
+name = "Bitcoin"
+era = "High Ages"
+culture = ""
+artist = "Sarla the Wrongdoer"
+description = ""
+effect = ""
+legendary = false
+
+[sub_resource type="Resource" id="Resource_ut1sr"]
 script = ExtResource("1_ouqc7")
 species = 0
 inventory = Array[Resource("res://scripts/resources/Item.gd")]([])
@@ -432,17 +432,17 @@ legendary = false
 script = ExtResource("2_qfvye")
 ItemCards = {}
 CharacterCards = {
-"Bitcoin": SubResource("Resource_b5mde"),
-"Bron Lorrix": SubResource("Resource_bs6jx"),
-"Brubsh": SubResource("Resource_pamgf"),
-"Flip": SubResource("Resource_i7ise"),
-"Loppit Hupplequim": SubResource("Resource_elhwo"),
-"Lumia Trequel": SubResource("Resource_mb1e8"),
-"Piff": SubResource("Resource_jn0q7"),
-"Quek Porrim": SubResource("Resource_qt1jo"),
-"Spubble": SubResource("Resource_4wh5v"),
-"The Worldsplitter": SubResource("Resource_8es08"),
-"Zy'phus": SubResource("Resource_dfrn5")
+"Bitcoin": SubResource("Resource_534nb"),
+"Bron Lorrix": SubResource("Resource_jmhsa"),
+"Brubsh": SubResource("Resource_n0ojw"),
+"Flip": SubResource("Resource_th2gf"),
+"Loppit Hupplequim": SubResource("Resource_kq5a8"),
+"Lumia Trequel": SubResource("Resource_h57xr"),
+"Piff": SubResource("Resource_wqpfx"),
+"Quek Porrim": SubResource("Resource_61d4c"),
+"Spubble": SubResource("Resource_wq2u4"),
+"The Worldsplitter": SubResource("Resource_1ymmi"),
+"Zy'phus": SubResource("Resource_ut1sr")
 }
 CreatureCards = {}
 PlaceCards = {}

@@ -35,7 +35,6 @@ text = "Download All
 
 [node name="Download Items" type="Button" parent="HBoxContainer2"]
 layout_mode = 2
-disabled = true
 text = "Download Items"
 
 [node name="Download Characters" type="Button" parent="HBoxContainer2"]
@@ -44,7 +43,6 @@ text = "Download Characters"
 
 [node name="Download Creatures" type="Button" parent="HBoxContainer2"]
 layout_mode = 2
-disabled = true
 text = "Download Creatures"
 
 [node name="Download Places" type="Button" parent="HBoxContainer2"]
@@ -120,6 +118,8 @@ text = "Export Places"
 
 [node name="CharacterExport" parent="." instance=ExtResource("2_0kkoa")]
 
+[connection signal="button_up" from="HBoxContainer2/Download Items" to="." method="_on_download_items"]
 [connection signal="button_up" from="HBoxContainer2/Download Characters" to="." method="_on_download_characters"]
+[connection signal="button_up" from="HBoxContainer2/Download Creatures" to="." method="_on_download_creatures"]
 [connection signal="button_up" from="HBoxContainer/Generate Characters" to="." method="_on_generate_characters"]
 [connection signal="button_up" from="HBoxContainer3/Export Characters" to="." method="_on_export_characters"]
