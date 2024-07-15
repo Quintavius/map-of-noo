@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Cards" load_steps=98 format=3 uid="uid://rdwg11vrm7q2"]
+[gd_resource type="Resource" script_class="Cards" load_steps=126 format=3 uid="uid://rdwg11vrm7q2"]
 
 [ext_resource type="Texture2D" uid="uid://726hucuinl6n" path="res://assets/card_art/characters/Lumia Trequel.png" id="1_fdt66"]
 [ext_resource type="Script" path="res://scripts/resources/Character.gd" id="1_ouqc7"]
@@ -33,9 +33,37 @@
 [ext_resource type="Texture2D" uid="uid://by03db3mr0m7" path="res://assets/card_art/items/Weighted Metal Claws.png" id="21_y3eqm"]
 [ext_resource type="Texture2D" uid="uid://keqaimmus0yv" path="res://assets/card_art/items/Shoddy Old Sword.png" id="22_jh0bm"]
 [ext_resource type="Texture2D" uid="uid://bw523vvx7ssb3" path="res://assets/card_art/items/Juggernaut Blade.png" id="23_eq3w3"]
+[ext_resource type="Texture2D" uid="uid://wi75ns1duwnk" path="res://assets/card_art/items/Roughspun Frengler Tunic.png" id="24_omxns"]
+[ext_resource type="Texture2D" uid="uid://ctc1aox1sj2tw" path="res://assets/card_art/items/Scholar Robe.png" id="25_2caxw"]
 [ext_resource type="Texture2D" uid="uid://bl0hvsm4p172r" path="res://assets/card_art/items/Fogbearer's Coat.png" id="25_j1ddg"]
+[ext_resource type="Texture2D" uid="uid://05nut72hsk3i" path="res://assets/card_art/items/Qwip Claws.png" id="26_pdbj1"]
+[ext_resource type="Texture2D" uid="uid://ctwah2873jqfl" path="res://assets/card_art/items/Ancient Blunderfrost.png" id="27_24w0y"]
+[ext_resource type="Texture2D" uid="uid://clh4hol4kw6d2" path="res://assets/card_art/items/Worn Broadsword.png" id="28_5vc7m"]
+[ext_resource type="Texture2D" uid="uid://cljaow01kpvrm" path="res://assets/card_art/items/Empire Short Sword.png" id="29_cxl0n"]
+[ext_resource type="Texture2D" uid="uid://dqoguxyyri0rp" path="res://assets/card_art/items/Extended Lance.png" id="30_rhx5d"]
+[ext_resource type="Texture2D" uid="uid://bjhxvkxdju5we" path="res://assets/card_art/items/Little Magus.png" id="32_g8f6c"]
+[ext_resource type="Texture2D" uid="uid://def8ufp0qdv53" path="res://assets/card_art/items/Steel Shield.png" id="33_l84kk"]
+[ext_resource type="Texture2D" uid="uid://cv26si7fl1vu0" path="res://assets/card_art/items/Broad Blade.png" id="34_t2jma"]
+[ext_resource type="Texture2D" uid="uid://c7frpo5mf63sf" path="res://assets/card_art/items/The Blind God.png" id="35_xry8c"]
+[ext_resource type="Texture2D" uid="uid://cf42y85cj62lh" path="res://assets/card_art/items/Akai's Wings.png" id="36_yva2t"]
+[ext_resource type="Texture2D" uid="uid://n1qsi1lrhb2g" path="res://assets/card_art/items/Rust Knight.png" id="37_gds54"]
+[ext_resource type="Texture2D" uid="uid://bc4111miowqey" path="res://assets/card_art/items/Professor's Robe.png" id="38_13ubd"]
+[ext_resource type="Texture2D" uid="uid://clswga8sc6iux" path="res://assets/card_art/items/Qwip Clothes.png" id="39_mxup5"]
+[ext_resource type="Texture2D" uid="uid://cextu2rrqmo8w" path="res://assets/card_art/items/Experimental Freezelock.png" id="40_1i85t"]
+[ext_resource type="Texture2D" uid="uid://cg6ugeoh41hin" path="res://assets/card_art/items/Novice Academic Robe.png" id="41_t5xmv"]
+[ext_resource type="Texture2D" uid="uid://duvxqpm41pyme" path="res://assets/card_art/items/Pressure Bomb.png" id="42_fqwcv"]
+[ext_resource type="Texture2D" uid="uid://cdqx6a50rycsv" path="res://assets/card_art/items/Death Club.png" id="43_i6fq8"]
+[ext_resource type="Texture2D" uid="uid://b0bipiyih0jeq" path="res://assets/card_art/items/Sigil of Kalia.png" id="48_nq3mb"]
+[ext_resource type="Texture2D" uid="uid://bdo3rf11vpfkc" path="res://assets/card_art/items/Foot Soldier Armour.png" id="49_vu1cj"]
+[ext_resource type="Texture2D" uid="uid://bmmuxxnrpsv2p" path="res://assets/card_art/items/Guided Stiletto.png" id="51_82q5d"]
+[ext_resource type="Texture2D" uid="uid://c0lh825687ecq" path="res://assets/card_art/items/Stone Edge.png" id="52_1oswl"]
+[ext_resource type="Texture2D" uid="uid://cifahuli4me83" path="res://assets/card_art/items/Stone Suit.png" id="53_6o64a"]
+[ext_resource type="Texture2D" uid="uid://c343kxteb8nh4" path="res://assets/card_art/items/Directional Blast Device.png" id="54_phnfu"]
+[ext_resource type="Texture2D" uid="uid://c74nvr0ycbg4m" path="res://assets/card_art/items/The Emerald Hand.png" id="55_nuebk"]
+[ext_resource type="Texture2D" uid="uid://bmyk8stx7lulv" path="res://assets/card_art/items/Mini Crossbow.png" id="56_mxmr6"]
+[ext_resource type="Texture2D" uid="uid://d1jimfwwj1pw4" path="res://assets/card_art/items/Flump Axe.png" id="58_xi4ob"]
 
-[sub_resource type="Resource" id="Resource_kghb0"]
+[sub_resource type="Resource" id="Resource_ie0c6"]
 script = ExtResource("1_ouqc7")
 species = 0
 inventory = Array[ExtResource("13_hapg1")]([])
@@ -50,8 +78,8 @@ tongue = 2
 tongue_exp = 0
 hands = 2
 hands_exp = 0
-attack = 2
-defense = 1
+attack = 3
+defense = 2
 skill_0_active = true
 skill_0_name = "Spirit"
 skill_0_level = 2
@@ -74,7 +102,7 @@ effect = ""
 image = ExtResource("1_fdt66")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_85ssh"]
+[sub_resource type="Resource" id="Resource_pgmhh"]
 script = ExtResource("1_ouqc7")
 species = 0
 inventory = Array[ExtResource("13_hapg1")]([])
@@ -89,8 +117,8 @@ tongue = 3
 tongue_exp = 0
 hands = 3
 hands_exp = 0
-attack = 2
-defense = 2
+attack = 3
+defense = 3
 skill_0_active = true
 skill_0_name = "Spirit"
 skill_0_level = 3
@@ -113,7 +141,7 @@ effect = ""
 image = ExtResource("3_ahgsy")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_ye8na"]
+[sub_resource type="Resource" id="Resource_jfefy"]
 script = ExtResource("1_ouqc7")
 species = 0
 inventory = Array[ExtResource("13_hapg1")]([])
@@ -128,8 +156,8 @@ tongue = 1
 tongue_exp = 0
 hands = 0
 hands_exp = 0
-attack = 0
-defense = 0
+attack = 1
+defense = 1
 skill_0_active = true
 skill_0_name = "Archeology"
 skill_0_level = 1
@@ -152,7 +180,7 @@ effect = ""
 image = ExtResource("4_sjg2e")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_cae77"]
+[sub_resource type="Resource" id="Resource_iybgq"]
 script = ExtResource("1_ouqc7")
 species = 0
 inventory = Array[ExtResource("13_hapg1")]([])
@@ -167,8 +195,8 @@ tongue = 2
 tongue_exp = 0
 hands = 2
 hands_exp = 0
-attack = 0
-defense = 0
+attack = 1
+defense = 1
 skill_0_active = true
 skill_0_name = "Cooking"
 skill_0_level = 2
@@ -191,7 +219,7 @@ effect = ""
 image = ExtResource("5_xwv1g")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_ie0jc"]
+[sub_resource type="Resource" id="Resource_uhkck"]
 script = ExtResource("1_ouqc7")
 species = 0
 inventory = Array[ExtResource("13_hapg1")]([])
@@ -206,8 +234,8 @@ tongue = 0
 tongue_exp = 0
 hands = 0
 hands_exp = 0
-attack = 1
-defense = 0
+attack = 2
+defense = 1
 skill_0_active = false
 skill_0_name = ""
 skill_0_level = 0
@@ -230,7 +258,7 @@ effect = ""
 image = ExtResource("6_ku6ri")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_3ugu7"]
+[sub_resource type="Resource" id="Resource_2onyt"]
 script = ExtResource("1_ouqc7")
 species = 0
 inventory = Array[ExtResource("13_hapg1")]([])
@@ -245,8 +273,8 @@ tongue = 1
 tongue_exp = 0
 hands = 2
 hands_exp = 0
-attack = 0
-defense = 0
+attack = 1
+defense = 1
 skill_0_active = true
 skill_0_name = "Herbalism"
 skill_0_level = 2
@@ -269,7 +297,7 @@ effect = ""
 image = ExtResource("7_dr4ka")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_10r3m"]
+[sub_resource type="Resource" id="Resource_aafy0"]
 script = ExtResource("1_ouqc7")
 species = 0
 inventory = Array[ExtResource("13_hapg1")]([])
@@ -284,8 +312,8 @@ tongue = 2
 tongue_exp = 0
 hands = 1
 hands_exp = 0
-attack = 1
-defense = 1
+attack = 2
+defense = 2
 skill_0_active = true
 skill_0_name = "Radiance"
 skill_0_level = 2
@@ -308,7 +336,7 @@ effect = ""
 image = ExtResource("8_w8se0")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_22n5u"]
+[sub_resource type="Resource" id="Resource_jakmf"]
 script = ExtResource("1_ouqc7")
 species = 0
 inventory = Array[ExtResource("13_hapg1")]([])
@@ -323,8 +351,8 @@ tongue = 3
 tongue_exp = 0
 hands = 1
 hands_exp = 0
-attack = 0
-defense = 2
+attack = 1
+defense = 3
 skill_0_active = false
 skill_0_name = ""
 skill_0_level = 0
@@ -347,7 +375,7 @@ effect = ""
 image = ExtResource("9_l8p0c")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_v2asp"]
+[sub_resource type="Resource" id="Resource_odthi"]
 script = ExtResource("1_ouqc7")
 species = 0
 inventory = Array[ExtResource("13_hapg1")]([])
@@ -362,8 +390,8 @@ tongue = 1
 tongue_exp = 0
 hands = 2
 hands_exp = 0
-attack = 2
-defense = 1
+attack = 3
+defense = 2
 skill_0_active = false
 skill_0_name = ""
 skill_0_level = 0
@@ -386,7 +414,7 @@ effect = ""
 image = ExtResource("10_ggumg")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_03ebh"]
+[sub_resource type="Resource" id="Resource_4jf44"]
 script = ExtResource("1_ouqc7")
 species = 0
 inventory = Array[ExtResource("13_hapg1")]([])
@@ -401,11 +429,11 @@ tongue = 1
 tongue_exp = 0
 hands = 3
 hands_exp = 0
-attack = 0
-defense = 0
-skill_0_active = false
-skill_0_name = ""
-skill_0_level = 0
+attack = 1
+defense = 1
+skill_0_active = true
+skill_0_name = "Woodworking"
+skill_0_level = 1
 skill_0_exp = 0
 skill_1_active = false
 skill_1_name = ""
@@ -424,7 +452,7 @@ description = ""
 effect = ""
 legendary = false
 
-[sub_resource type="Resource" id="Resource_gcrqs"]
+[sub_resource type="Resource" id="Resource_nbd4w"]
 script = ExtResource("1_ouqc7")
 species = 0
 inventory = Array[ExtResource("13_hapg1")]([])
@@ -439,11 +467,11 @@ tongue = 1
 tongue_exp = 0
 hands = 2
 hands_exp = 0
-attack = 1
-defense = 0
-skill_0_active = false
-skill_0_name = ""
-skill_0_level = 0
+attack = 2
+defense = 1
+skill_0_active = true
+skill_0_name = "God of Confusion"
+skill_0_level = 1
 skill_0_exp = 0
 skill_1_active = false
 skill_1_name = ""
@@ -462,7 +490,7 @@ description = ""
 effect = ""
 legendary = false
 
-[sub_resource type="Resource" id="Resource_qvmjx"]
+[sub_resource type="Resource" id="Resource_4nl2n"]
 script = ExtResource("1_ouqc7")
 species = 0
 inventory = Array[ExtResource("13_hapg1")]([])
@@ -477,8 +505,8 @@ tongue = 1
 tongue_exp = 0
 hands = 2
 hands_exp = 0
-attack = 1
-defense = 0
+attack = 2
+defense = 1
 skill_0_active = true
 skill_0_name = "Guiding"
 skill_0_level = 2
@@ -496,12 +524,12 @@ name = "Larry The Wretched"
 era = "High Ages"
 culture = "The Seething Sea"
 artist = "Hopscotch"
-description = "Guide of the Seething Sea"
+description = "Guide of the Seething Sea."
 effect = ""
 image = ExtResource("11_b2rqq")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_50532"]
+[sub_resource type="Resource" id="Resource_jiybr"]
 script = ExtResource("11_o6i8j")
 state = 0
 pronouns = ""
@@ -536,7 +564,7 @@ description = ""
 effect = ""
 legendary = false
 
-[sub_resource type="Resource" id="Resource_migt6"]
+[sub_resource type="Resource" id="Resource_y3nxt"]
 script = ExtResource("11_o6i8j")
 state = 0
 pronouns = ""
@@ -571,7 +599,7 @@ description = ""
 effect = ""
 legendary = false
 
-[sub_resource type="Resource" id="Resource_pxoip"]
+[sub_resource type="Resource" id="Resource_84h5e"]
 script = ExtResource("11_o6i8j")
 state = 0
 pronouns = ""
@@ -606,7 +634,7 @@ description = ""
 effect = ""
 legendary = false
 
-[sub_resource type="Resource" id="Resource_61d0i"]
+[sub_resource type="Resource" id="Resource_d7cqd"]
 script = ExtResource("11_o6i8j")
 state = 0
 pronouns = ""
@@ -642,11 +670,15 @@ effect = "Exudes a paralysing poison from its flexible beak."
 image = ExtResource("12_gv32v")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_xqql0"]
+[sub_resource type="Resource" id="Resource_fv5et"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 0
+brawn = 0
+tongue = 0
+hands = 1
 attack = 0
 defense = 0
 card_type = 8
@@ -654,16 +686,20 @@ name = "Ring of Roots"
 era = "High Ages"
 culture = "Rostian Army"
 artist = "Thirteen"
-description = ""
-effect = "Can grow roots from itself"
+description = "You feel a much deeper connection with nature."
+effect = "Allows user to root themselves into place."
 image = ExtResource("14_acnu6")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_u8ka4"]
+[sub_resource type="Resource" id="Resource_p74n6"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 1
+brawn = 1
+tongue = 0
+hands = 1
 attack = 2
 defense = 0
 card_type = 2
@@ -671,16 +707,20 @@ name = "Plunderbuss"
 era = "High Ages"
 culture = "Ancient Mesmele"
 artist = "Hopscotch"
-description = ""
-effect = "Can recall bullet"
+description = "A Mesmelian pirate's favourite."
+effect = "Can recall bullets."
 image = ExtResource("16_aky5e")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_v5r5s"]
+[sub_resource type="Resource" id="Resource_j7cv6"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 0
+brawn = 0
+tongue = 0
+hands = 1
 attack = 0
 defense = 1
 card_type = 4
@@ -688,16 +728,20 @@ name = "Mesmelian Lamellar"
 era = "High Ages"
 culture = "Ancient Mesmele"
 artist = "Kadia Lompern"
-description = ""
-effect = "Easily withstands hot weather"
+description = "Modular, to fit all body layouts."
+effect = "Easily withstands hot weather."
 image = ExtResource("17_8eokc")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_8bxy4"]
+[sub_resource type="Resource" id="Resource_54onh"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 2
+brawn = 0
+tongue = 1
+hands = 1
 attack = 0
 defense = 2
 card_type = 4
@@ -705,33 +749,41 @@ name = "Ceremonial Academic Garb"
 era = "High Ages"
 culture = "Dreamwalking Academy "
 artist = "Glup"
-description = ""
+description = "Impractical for everyday wear, but great for getting into the zone."
 effect = "Disadvantage to attack & defense, double advantage on Dreamwalking"
 image = ExtResource("18_bkjco")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_eys0i"]
+[sub_resource type="Resource" id="Resource_t3vhx"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
-attack = 1
+brains = 0
+brawn = 1
+tongue = 0
+hands = 1
+attack = 2
 defense = 0
 card_type = 2
 name = "Rostian Empire Crossbow"
 era = "High Ages"
 culture = "Rostian Army"
 artist = "Oleander Plix"
-description = ""
-effect = ""
+description = "Mass produced and not known for its quality."
+effect = "Rolls need to clear target by 2 to succeed."
 image = ExtResource("19_kqk1i")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_u71ih"]
+[sub_resource type="Resource" id="Resource_bvulv"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 1
+brawn = 1
+tongue = 0
+hands = 1
 attack = 3
 defense = 0
 card_type = 2
@@ -739,16 +791,20 @@ name = "Basic Blunderfrost"
 era = "High Ages"
 culture = "Rostian Army"
 artist = "Memperstetch"
-description = ""
-effect = ""
+description = "Largely unchanged from its earliest design."
+effect = "Gun jams if at least one dice lands on a 1."
 image = ExtResource("20_tuwdd")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_srx14"]
+[sub_resource type="Resource" id="Resource_c8lwn"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 1
+brawn = 2
+tongue = 0
+hands = 1
 attack = 3
 defense = 0
 card_type = 2
@@ -756,16 +812,20 @@ name = "Weighted Metal Claws"
 era = "High Ages"
 culture = "Kalia"
 artist = "Viro Bjormlas"
-description = ""
+description = "For those who were born without natural claws."
 effect = ""
 image = ExtResource("21_y3eqm")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_u6q8h"]
+[sub_resource type="Resource" id="Resource_d10dy"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 0
+brawn = 0
+tongue = 0
+hands = 0
 attack = 2
 defense = 0
 card_type = 2
@@ -773,16 +833,20 @@ name = "Shoddy Old Sword"
 era = "High Ages"
 culture = "Espire Guilds"
 artist = "Taff Bort"
-description = ""
+description = "Mostly good for practice."
 effect = ""
 image = ExtResource("22_jh0bm")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_um3r2"]
+[sub_resource type="Resource" id="Resource_f38as"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 0
+brawn = 2
+tongue = 0
+hands = 1
 attack = 3
 defense = 0
 card_type = 2
@@ -790,16 +854,20 @@ name = "Juggernaut Blade"
 era = "High Ages"
 culture = "Rostian Army"
 artist = "Lotte Braxon"
-description = ""
-effect = "Reroll 1 dice"
+description = "Worn by Rostian Juggernauts."
+effect = "Reroll 1 dice each use."
 image = ExtResource("23_eq3w3")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_yrpgr"]
+[sub_resource type="Resource" id="Resource_xiwoa"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 0
+brawn = 0
+tongue = 0
+hands = 0
 attack = 0
 defense = 1
 card_type = 4
@@ -807,15 +875,20 @@ name = "Roughspun Frengler Tunic"
 era = "High Ages"
 culture = "Kalia"
 artist = "Olli The Troublesome"
-description = ""
-effect = "Allows silent movement through forest"
+description = "A comforting garment."
+effect = "Allows silent movement through forest."
+image = ExtResource("24_omxns")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_wbs47"]
+[sub_resource type="Resource" id="Resource_hf6ch"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 2
+brawn = 0
+tongue = 1
+hands = 0
 attack = 0
 defense = 1
 card_type = 4
@@ -823,15 +896,20 @@ name = "Scholar Robe"
 era = "High Ages"
 culture = "Dreamwalking Academy "
 artist = "Dina Peloides"
-description = ""
-effect = "Increases speed of learning, upgrades require -1 critical"
+description = "Just wearing this makes you feel more intelligent."
+effect = "-1 critical rolls required for upgrades when worn."
+image = ExtResource("25_2caxw")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_0s2f6"]
+[sub_resource type="Resource" id="Resource_vm0ly"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 1
+brawn = 1
+tongue = 0
+hands = 2
 attack = 1
 defense = 0
 card_type = 2
@@ -839,15 +917,20 @@ name = "Qwip Claws"
 era = "High Ages"
 culture = "Kalia"
 artist = "Darvan"
-description = ""
-effect = "Great for climbing"
+description = "These once belonged to one of the cutest creatures of Noo."
+effect = "Advantage on climbing."
+image = ExtResource("26_pdbj1")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_rbilm"]
+[sub_resource type="Resource" id="Resource_ddqor"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 0
+brawn = 2
+tongue = 0
+hands = 1
 attack = 2
 defense = 0
 card_type = 2
@@ -855,15 +938,20 @@ name = "Ancient Blunderfrost"
 era = "High Ages"
 culture = "Rostian Army"
 artist = "Quax Lopson"
-description = ""
+description = "While newer models have few upgrades, they were necessary."
 effect = "Explodes on critical fail"
+image = ExtResource("27_24w0y")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_70dxn"]
+[sub_resource type="Resource" id="Resource_360cq"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 0
+brawn = 1
+tongue = 0
+hands = 0
 attack = 2
 defense = 0
 card_type = 2
@@ -871,15 +959,20 @@ name = "Worn Broadsword"
 era = "High Ages"
 culture = "Secorras Republic "
 artist = "Fang"
-description = ""
+description = "It is what it is."
 effect = ""
+image = ExtResource("28_5vc7m")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_y4rcg"]
+[sub_resource type="Resource" id="Resource_hwusl"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 0
+brawn = 1
+tongue = 0
+hands = 1
 attack = 2
 defense = 0
 card_type = 2
@@ -887,15 +980,20 @@ name = "Empire Short Sword"
 era = "High Ages"
 culture = "Rostian Army"
 artist = "Deb Motterbop"
-description = ""
+description = "Standard issue, etched with a serial number."
 effect = ""
+image = ExtResource("29_cxl0n")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_p3osa"]
+[sub_resource type="Resource" id="Resource_vg3aw"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 0
+brawn = 2
+tongue = 0
+hands = 3
 attack = 2
 defense = 0
 card_type = 2
@@ -903,15 +1001,20 @@ name = "Extended Lance"
 era = "High Ages"
 culture = "Secorras Republic "
 artist = "Hart Doppelwood"
-description = ""
-effect = "Can extend to impressive length"
+description = "Used on and off the battlefield."
+effect = "Can extend to 4x its size."
+image = ExtResource("30_rhx5d")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_rprwu"]
+[sub_resource type="Resource" id="Resource_pnb8b"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 0
+brawn = 0
+tongue = 0
+hands = 0
 attack = 0
 defense = 0
 card_type = 5
@@ -919,16 +1022,20 @@ name = "Eagle's Tears"
 era = "High Ages"
 culture = "Emerald Garden"
 artist = "Link Fitterwit"
-description = "A bottle of literal liquid confidence"
+description = "A bottle of literal liquid confidence."
 effect = "Opponents can't counter roll for 3 actions."
 image = ExtResource("15_4wswn")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_lm5wu"]
+[sub_resource type="Resource" id="Resource_njgja"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 0
+brawn = 0
+tongue = 0
+hands = 0
 attack = 0
 defense = 0
 card_type = 6
@@ -936,15 +1043,20 @@ name = "Little Magus"
 era = "High Ages"
 culture = "Secorras Republic "
 artist = "Romal Trahl"
-description = ""
+description = "Tough luck."
 effect = "Remaining loot is destroyed, player loses 1 random item"
+image = ExtResource("32_g8f6c")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_t8smt"]
+[sub_resource type="Resource" id="Resource_8ywgi"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 0
+brawn = 2
+tongue = 0
+hands = 0
 attack = 0
 defense = 0
 card_type = 8
@@ -952,15 +1064,20 @@ name = "Steel Shield"
 era = "High Ages"
 culture = "Rostian Army"
 artist = "Pirie Lengrix"
-description = ""
-effect = "Reroll [Defense] once per battle"
+description = "A good defense is a really good idea."
+effect = "Reroll a defense roll once per battle."
+image = ExtResource("33_l84kk")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_gc7de"]
+[sub_resource type="Resource" id="Resource_hp1p6"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 0
+brawn = 3
+tongue = 0
+hands = 3
 attack = 3
 defense = 0
 card_type = 2
@@ -968,15 +1085,20 @@ name = "Broad Blade"
 era = "High Ages"
 culture = "Rostian Army"
 artist = "Limbor Derpenderf"
-description = ""
-effect = "Clearing by double destroys enemy's armour"
+description = "A dreaded sight."
+effect = "Clearing an attack roll by double destroys enemy's armor."
+image = ExtResource("34_t2jma")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_4mo05"]
+[sub_resource type="Resource" id="Resource_r15cv"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 0
+brawn = 0
+tongue = 0
+hands = 0
 attack = 0
 defense = 0
 card_type = 6
@@ -984,15 +1106,20 @@ name = "The Blind God"
 era = "High Ages"
 culture = "Dreamwalking Academy "
 artist = "Nerumo"
-description = ""
-effect = "Afflicted becomes selfish narcissist until cured, [Brains] -2"
+description = "Incredibly fashionable."
+effect = "Afflicted becomes selfish narcissist until cured, Brains -2"
+image = ExtResource("35_xry8c")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_vvy1b"]
+[sub_resource type="Resource" id="Resource_5tvyh"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 2
+brawn = 0
+tongue = 1
+hands = 3
 attack = 0
 defense = 0
 card_type = 8
@@ -1000,15 +1127,20 @@ name = "Akai's Wings"
 era = "High Ages"
 culture = "Kalia"
 artist = "Hermishol Kalaia"
-description = ""
-effect = "Allows flight"
+description = "A prosthetic, said to have belonged to a handsome explorer."
+effect = "Allows flight."
+image = ExtResource("36_yva2t")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_xy5wl"]
+[sub_resource type="Resource" id="Resource_f7g5d"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 0
+brawn = 3
+tongue = 0
+hands = 0
 attack = 0
 defense = 3
 card_type = 4
@@ -1016,15 +1148,20 @@ name = "Rust Knight"
 era = "High Ages"
 culture = "Rostian Army"
 artist = "Ser Gorgiv"
-description = ""
-effect = ""
+description = "You can't hide wearing this, but you won't need to."
+effect = "Makes stealth impossible."
+image = ExtResource("37_gds54")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_ylqem"]
+[sub_resource type="Resource" id="Resource_ymb33"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 3
+brawn = 0
+tongue = 3
+hands = 2
 attack = 0
 defense = 1
 card_type = 4
@@ -1032,15 +1169,20 @@ name = "Professor's Robe"
 era = "High Ages"
 culture = "Dreamwalking Academy "
 artist = "Fang"
-description = ""
-effect = "Master 1 Dreamwalking ability while wearing "
+description = "Receiving this robe is one of the highest honours an academic can receive."
+effect = "Use 1 learned Dreamwalking ability at master level while wearing."
+image = ExtResource("38_13ubd")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_h8pyd"]
+[sub_resource type="Resource" id="Resource_ypa4x"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 0
+brawn = 0
+tongue = 0
+hands = 0
 attack = 0
 defense = 1
 card_type = 4
@@ -1048,15 +1190,20 @@ name = "Qwip Clothes"
 era = "High Ages"
 culture = "Kalia"
 artist = "Mik Gabson"
-description = ""
+description = "Ethically produced from a Qwip's fine fur."
 effect = ""
+image = ExtResource("39_mxup5")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_iivrp"]
+[sub_resource type="Resource" id="Resource_pmrfe"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 2
+brawn = 0
+tongue = 0
+hands = 0
 attack = 1
 defense = 0
 card_type = 2
@@ -1064,15 +1211,20 @@ name = "Experimental Freezelock"
 era = "High Ages"
 culture = "Rostian Army"
 artist = "Avery Rukyo"
-description = ""
-effect = "Muzzle is a cloud of freezing crystals"
+description = "You see a light blue glow looking down its barrel."
+effect = "Each shot emits a cloud of freezing crystals."
+image = ExtResource("40_1i85t")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_hmrop"]
+[sub_resource type="Resource" id="Resource_gpo25"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 1
+brawn = 0
+tongue = 1
+hands = 0
 attack = 0
 defense = 1
 card_type = 4
@@ -1080,15 +1232,20 @@ name = "Novice Academic Robe"
 era = "High Ages"
 culture = "Dreamwalking Academy "
 artist = "Tumm Vungle"
-description = ""
+description = "Few academics stay long enough to move on from this robe."
 effect = ""
+image = ExtResource("41_t5xmv")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_k8el8"]
+[sub_resource type="Resource" id="Resource_wc65n"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 0
+brawn = 0
+tongue = 0
+hands = 0
 attack = 0
 defense = 0
 card_type = 6
@@ -1096,15 +1253,20 @@ name = "Pressure Bomb"
 era = "High Ages"
 culture = "Rostian Army"
 artist = "Hart Doppelwood"
-description = ""
-effect = "Inverts pressure in range, causing explosive decompression"
+description = "Legend has it, a rich conman succumbed to one of these."
+effect = "Inverts pressure in range, causing explosive decompression."
+image = ExtResource("42_fqwcv")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_hwtpn"]
+[sub_resource type="Resource" id="Resource_n3yuf"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 0
+brawn = 2
+tongue = 0
+hands = 1
 attack = 3
 defense = 0
 card_type = 2
@@ -1112,15 +1274,20 @@ name = "Death Club"
 era = "High Ages"
 culture = "Rostian Army"
 artist = "Link Fitterwit"
-description = ""
-effect = "User is unable to stop fighting until all enemies are defeated or out of sight"
+description = "til death do us party."
+effect = "User is unable to stop fighting until all enemies are defeated or out of sight."
+image = ExtResource("43_i6fq8")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_j8yea"]
+[sub_resource type="Resource" id="Resource_fn831"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 0
+brawn = 0
+tongue = 1
+hands = 0
 attack = 0
 defense = 0
 card_type = 8
@@ -1133,11 +1300,15 @@ effect = "Silent steps on hard surfaces."
 image = ExtResource("17_csalt")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_ucfti"]
+[sub_resource type="Resource" id="Resource_0aixn"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 0
+brawn = 0
+tongue = 0
+hands = 1
 attack = 3
 defense = 0
 card_type = 2
@@ -1150,11 +1321,15 @@ effect = ""
 image = ExtResource("16_vualk")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_wgbo0"]
+[sub_resource type="Resource" id="Resource_qk7qq"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 0
+brawn = 0
+tongue = 1
+hands = 0
 attack = 0
 defense = 1
 card_type = 4
@@ -1162,16 +1337,20 @@ name = "Secorran Tunic"
 era = "High Ages"
 culture = "Secorras Republic "
 artist = "Plik"
-description = ""
+description = "Not an uncommon sight in the streets of Secorras."
 effect = ""
 image = ExtResource("19_8fybu")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_4ljpc"]
+[sub_resource type="Resource" id="Resource_t0ioa"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 0
+brawn = 0
+tongue = 0
+hands = 0
 attack = 0
 defense = 0
 card_type = 6
@@ -1184,11 +1363,15 @@ effect = "Completely nullifies all sound while active"
 image = ExtResource("17_78hr0")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_aib64"]
+[sub_resource type="Resource" id="Resource_vcqsr"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 0
+brawn = 0
+tongue = 0
+hands = 0
 attack = 0
 defense = 0
 card_type = 8
@@ -1196,15 +1379,20 @@ name = "Sigil of Kalia"
 era = "High Ages"
 culture = "Kalia"
 artist = "DOOMsayer"
-description = ""
-effect = "Grants access to Kalia for outsiders"
+description = "Awarded for heroic deeds to the Children of the Sun."
+effect = "Grants access to Kalia for outsiders."
+image = ExtResource("48_nq3mb")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_s5itb"]
+[sub_resource type="Resource" id="Resource_6l14j"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 0
+brawn = 1
+tongue = 0
+hands = 0
 attack = 0
 defense = 1
 card_type = 4
@@ -1212,15 +1400,20 @@ name = "Foot Soldier Armour"
 era = "High Ages"
 culture = "Rostian Army"
 artist = "Zad Dermont"
-description = ""
+description = "Very light and mobile. It doesn't smell very good, however."
 effect = ""
+image = ExtResource("49_vu1cj")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_5k5lf"]
+[sub_resource type="Resource" id="Resource_7r68v"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 0
+brawn = 0
+tongue = 0
+hands = 0
 attack = 0
 defense = 0
 card_type = 7
@@ -1233,11 +1426,15 @@ effect = ""
 image = ExtResource("18_sglko")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_yrw2d"]
+[sub_resource type="Resource" id="Resource_j8f60"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 3
+brawn = 0
+tongue = 0
+hands = 1
 attack = 1
 defense = 0
 card_type = 2
@@ -1245,15 +1442,20 @@ name = "Guided Stiletto"
 era = "High Ages"
 culture = "Ancient Mesmele"
 artist = "The Fourth"
-description = ""
-effect = "Stiletto blade flies through air at user's will"
+description = "Favoured by assassins."
+effect = "Stiletto blade flies through air at user's will."
+image = ExtResource("51_82q5d")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_fhjb6"]
+[sub_resource type="Resource" id="Resource_70qdb"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 1
+brawn = 2
+tongue = 1
+hands = 1
 attack = 3
 defense = 0
 card_type = 2
@@ -1263,13 +1465,18 @@ culture = "The Seething Sea"
 artist = "Alter"
 description = "It seems ancient, older than Noo itself."
 effect = "Each swing is imbued with the power of the god of ages, but saps at the user's life force."
+image = ExtResource("52_1oswl")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_mnbjv"]
+[sub_resource type="Resource" id="Resource_mfwso"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 1
+brawn = 3
+tongue = 0
+hands = 1
 attack = 0
 defense = 3
 card_type = 4
@@ -1279,13 +1486,18 @@ culture = "Secorras Republic "
 artist = "Tybolt Gumpart"
 description = "A prototype designed by the school of chemistry's headmaster."
 effect = "Protects wearer from all damage, but is destroyed on critical fail or receiving a crititcal hit."
+image = ExtResource("53_6o64a")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_tdgee"]
+[sub_resource type="Resource" id="Resource_f1421"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 2
+brawn = 2
+tongue = 1
+hands = 2
 attack = 0
 defense = 0
 card_type = 8
@@ -1295,13 +1507,18 @@ culture = "Rostian Army"
 artist = "DOOMsayer"
 description = "Straight from the Rostian research labs."
 effect = "Creates a targeted explosion moving out from the ring. Roll Hands. Uncontrolled desctructive explosion on failure."
+image = ExtResource("54_phnfu")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_w5eg6"]
+[sub_resource type="Resource" id="Resource_ks35d"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 0
+brawn = 0
+tongue = 0
+hands = 0
 attack = 0
 defense = 0
 card_type = 7
@@ -1311,13 +1528,18 @@ culture = "Emerald Garden"
 artist = "Dr Bansen"
 description = "An artifact of unknown origin, discovered in Emerald Garden."
 effect = "Vegetation grows from any non-living surface it touches."
+image = ExtResource("55_nuebk")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_8uif6"]
+[sub_resource type="Resource" id="Resource_pa8yj"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 0
+brawn = 0
+tongue = 0
+hands = 1
 attack = 1
 defense = 0
 card_type = 2
@@ -1325,15 +1547,20 @@ name = "Mini Crossbow"
 era = "High Ages"
 culture = "Secorras Republic "
 artist = "Beruli Gerr"
-description = ""
-effect = "Can be used with one hand"
+description = "Easily concealed."
+effect = "Can be used with one hand."
+image = ExtResource("56_mxmr6")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_c6hr8"]
+[sub_resource type="Resource" id="Resource_lwrg6"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 0
+brawn = 2
+tongue = 0
+hands = 1
 attack = 2
 defense = 0
 card_type = 2
@@ -1341,16 +1568,20 @@ name = "Sun Flail"
 era = "High Ages"
 culture = "Ancient Mesmele"
 artist = "Cobwob"
-description = ""
+description = "A ceremonial weapon, but a weapon nonetheless."
 effect = ""
 image = ExtResource("19_a0137")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_csuxp"]
+[sub_resource type="Resource" id="Resource_o24ne"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 1
+brawn = 0
+tongue = 0
+hands = 2
 attack = 2
 defense = 0
 card_type = 2
@@ -1358,15 +1589,20 @@ name = "Flump Axe"
 era = "High Ages"
 culture = "Marshlanders"
 artist = "Master Kowhai"
-description = ""
-effect = ""
+description = "It's squishy."
+effect = "Can trap things it hits in large bubbles."
+image = ExtResource("58_xi4ob")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_37k1s"]
+[sub_resource type="Resource" id="Resource_ssbon"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 1
+brawn = 2
+tongue = 0
+hands = 2
 attack = 1
 defense = 0
 card_type = 2
@@ -1379,11 +1615,15 @@ effect = "Can catch fire at will."
 image = ExtResource("20_jfmx4")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_hkdrd"]
+[sub_resource type="Resource" id="Resource_5lphd"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 0
+brawn = 0
+tongue = 0
+hands = 0
 attack = 1
 defense = 0
 card_type = 2
@@ -1391,16 +1631,20 @@ name = "Wander Staff"
 era = "High Ages"
 culture = "The Seething Sea"
 artist = "Vaan Penlop"
-description = ""
+description = "Mostly an accessibility aid."
 effect = ""
 image = ExtResource("21_2iqah")
 legendary = false
 
-[sub_resource type="Resource" id="Resource_ridwo"]
+[sub_resource type="Resource" id="Resource_3fsu4"]
 script = ExtResource("13_hapg1")
 item_type = 0
 Subcategory = ""
 Dice = 0
+brains = 1
+brawn = 1
+tongue = 1
+hands = 1
 attack = 0
 defense = 1
 card_type = 4
@@ -1408,80 +1652,80 @@ name = "Fogbearer's Coat"
 era = "High Ages"
 culture = "The Seething Sea"
 artist = "Charlie Xerret"
-description = ""
-effect = ""
+description = "A necessary piece of equipment to cross the Sea of Seething"
+effect = "Dispels fog in its immediate surroundings."
 image = ExtResource("25_j1ddg")
 legendary = false
 
 [resource]
 script = ExtResource("2_qfvye")
 ItemCards = {
-"Akai's Wings": SubResource("Resource_vvy1b"),
-"Ancient Blunderfrost": SubResource("Resource_rbilm"),
-"Basic Blunderfrost": SubResource("Resource_u71ih"),
-"Broad Blade": SubResource("Resource_gc7de"),
-"Ceremonial Academic Garb": SubResource("Resource_8bxy4"),
-"Deafening Silencer": SubResource("Resource_4ljpc"),
-"Death Club": SubResource("Resource_hwtpn"),
-"Directional Blast Device": SubResource("Resource_tdgee"),
-"Eagle's Tears": SubResource("Resource_rprwu"),
-"Empire Short Sword": SubResource("Resource_y4rcg"),
-"Experimental Freezelock": SubResource("Resource_iivrp"),
-"Extended Lance": SubResource("Resource_p3osa"),
-"Fighting Stick": SubResource("Resource_ucfti"),
-"Flump Axe": SubResource("Resource_csuxp"),
-"Fogbearer's Coat": SubResource("Resource_ridwo"),
-"Foot Soldier Armour": SubResource("Resource_s5itb"),
-"Guided Stiletto": SubResource("Resource_yrw2d"),
-"High Art Sculpture": SubResource("Resource_5k5lf"),
-"Hotaxe": SubResource("Resource_37k1s"),
-"Juggernaut Blade": SubResource("Resource_um3r2"),
-"Little Magus": SubResource("Resource_lm5wu"),
-"Mesmelian Lamellar": SubResource("Resource_v5r5s"),
-"Mini Crossbow": SubResource("Resource_8uif6"),
-"Novice Academic Robe": SubResource("Resource_hmrop"),
-"Plunderbuss": SubResource("Resource_u8ka4"),
-"Pressure Bomb": SubResource("Resource_k8el8"),
-"Professor's Robe": SubResource("Resource_ylqem"),
-"Qwip Claws": SubResource("Resource_0s2f6"),
-"Qwip Clothes": SubResource("Resource_h8pyd"),
-"Ring of Roots": SubResource("Resource_xqql0"),
-"Rostian Empire Crossbow": SubResource("Resource_eys0i"),
-"Roughspun Frengler Tunic": SubResource("Resource_yrpgr"),
-"Rust Knight": SubResource("Resource_xy5wl"),
-"Scholar Robe": SubResource("Resource_wbs47"),
-"Secorran Sneakers": SubResource("Resource_j8yea"),
-"Secorran Tunic": SubResource("Resource_wgbo0"),
-"Shoddy Old Sword": SubResource("Resource_u6q8h"),
-"Sigil of Kalia": SubResource("Resource_aib64"),
-"Steel Shield": SubResource("Resource_t8smt"),
-"Stone Edge": SubResource("Resource_fhjb6"),
-"Stone Suit": SubResource("Resource_mnbjv"),
-"Sun Flail": SubResource("Resource_c6hr8"),
-"The Blind God": SubResource("Resource_4mo05"),
-"The Emerald Hand": SubResource("Resource_w5eg6"),
-"Wander Staff": SubResource("Resource_hkdrd"),
-"Weighted Metal Claws": SubResource("Resource_srx14"),
-"Worn Broadsword": SubResource("Resource_70dxn")
+"Akai's Wings": SubResource("Resource_5tvyh"),
+"Ancient Blunderfrost": SubResource("Resource_ddqor"),
+"Basic Blunderfrost": SubResource("Resource_bvulv"),
+"Broad Blade": SubResource("Resource_hp1p6"),
+"Ceremonial Academic Garb": SubResource("Resource_54onh"),
+"Deafening Silencer": SubResource("Resource_t0ioa"),
+"Death Club": SubResource("Resource_n3yuf"),
+"Directional Blast Device": SubResource("Resource_f1421"),
+"Eagle's Tears": SubResource("Resource_pnb8b"),
+"Empire Short Sword": SubResource("Resource_hwusl"),
+"Experimental Freezelock": SubResource("Resource_pmrfe"),
+"Extended Lance": SubResource("Resource_vg3aw"),
+"Fighting Stick": SubResource("Resource_0aixn"),
+"Flump Axe": SubResource("Resource_o24ne"),
+"Fogbearer's Coat": SubResource("Resource_3fsu4"),
+"Foot Soldier Armour": SubResource("Resource_6l14j"),
+"Guided Stiletto": SubResource("Resource_j8f60"),
+"High Art Sculpture": SubResource("Resource_7r68v"),
+"Hotaxe": SubResource("Resource_ssbon"),
+"Juggernaut Blade": SubResource("Resource_f38as"),
+"Little Magus": SubResource("Resource_njgja"),
+"Mesmelian Lamellar": SubResource("Resource_j7cv6"),
+"Mini Crossbow": SubResource("Resource_pa8yj"),
+"Novice Academic Robe": SubResource("Resource_gpo25"),
+"Plunderbuss": SubResource("Resource_p74n6"),
+"Pressure Bomb": SubResource("Resource_wc65n"),
+"Professor's Robe": SubResource("Resource_ymb33"),
+"Qwip Claws": SubResource("Resource_vm0ly"),
+"Qwip Clothes": SubResource("Resource_ypa4x"),
+"Ring of Roots": SubResource("Resource_fv5et"),
+"Rostian Empire Crossbow": SubResource("Resource_t3vhx"),
+"Roughspun Frengler Tunic": SubResource("Resource_xiwoa"),
+"Rust Knight": SubResource("Resource_f7g5d"),
+"Scholar Robe": SubResource("Resource_hf6ch"),
+"Secorran Sneakers": SubResource("Resource_fn831"),
+"Secorran Tunic": SubResource("Resource_qk7qq"),
+"Shoddy Old Sword": SubResource("Resource_d10dy"),
+"Sigil of Kalia": SubResource("Resource_vcqsr"),
+"Steel Shield": SubResource("Resource_8ywgi"),
+"Stone Edge": SubResource("Resource_70qdb"),
+"Stone Suit": SubResource("Resource_mfwso"),
+"Sun Flail": SubResource("Resource_lwrg6"),
+"The Blind God": SubResource("Resource_r15cv"),
+"The Emerald Hand": SubResource("Resource_ks35d"),
+"Wander Staff": SubResource("Resource_5lphd"),
+"Weighted Metal Claws": SubResource("Resource_c8lwn"),
+"Worn Broadsword": SubResource("Resource_360cq")
 }
 CharacterCards = {
-"Bitcoin": SubResource("Resource_03ebh"),
-"Bron Lorrix": SubResource("Resource_v2asp"),
-"Brubsh": SubResource("Resource_ie0jc"),
-"Flip": SubResource("Resource_ye8na"),
-"Larry The Wretched": SubResource("Resource_qvmjx"),
-"Loppit Hupplequim": SubResource("Resource_22n5u"),
-"Lumia Trequel": SubResource("Resource_kghb0"),
-"Piff": SubResource("Resource_3ugu7"),
-"Quek Porrim": SubResource("Resource_10r3m"),
-"Spubble": SubResource("Resource_cae77"),
-"The Worldsplitter": SubResource("Resource_85ssh"),
-"Zy'phus": SubResource("Resource_gcrqs")
+"Bitcoin": SubResource("Resource_4jf44"),
+"Bron Lorrix": SubResource("Resource_odthi"),
+"Brubsh": SubResource("Resource_uhkck"),
+"Flip": SubResource("Resource_jfefy"),
+"Larry The Wretched": SubResource("Resource_4nl2n"),
+"Loppit Hupplequim": SubResource("Resource_jakmf"),
+"Lumia Trequel": SubResource("Resource_ie0c6"),
+"Piff": SubResource("Resource_2onyt"),
+"Quek Porrim": SubResource("Resource_aafy0"),
+"Spubble": SubResource("Resource_iybgq"),
+"The Worldsplitter": SubResource("Resource_pgmhh"),
+"Zy'phus": SubResource("Resource_nbd4w")
 }
 CreatureCards = {
-"Aggressive Gribsal": SubResource("Resource_61d0i"),
-"Ashen Mistwalker": SubResource("Resource_pxoip"),
-"Daymare": SubResource("Resource_migt6"),
-"Olf": SubResource("Resource_50532")
+"Aggressive Gribsal": SubResource("Resource_d7cqd"),
+"Ashen Mistwalker": SubResource("Resource_84h5e"),
+"Daymare": SubResource("Resource_y3nxt"),
+"Olf": SubResource("Resource_jiybr")
 }
 PlaceCards = {}

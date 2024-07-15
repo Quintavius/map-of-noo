@@ -1,6 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://ci3f5scnttag6"]
+[gd_scene load_steps=26 format=3 uid="uid://ci3f5scnttag6"]
 
 [ext_resource type="Script" path="res://scripts/resources/CardRenderer.gd" id="1_op1ox"]
+[ext_resource type="Texture2D" uid="uid://boqrr8efx1257" path="res://assets/card_art/characters/Flip.png" id="3_1vuvb"]
 [ext_resource type="Theme" uid="uid://cvsrecu06my7j" path="res://theme.tres" id="3_dk4n7"]
 [ext_resource type="Texture2D" uid="uid://dlq156prrfvna" path="res://assets/interface/cards/description_box.png" id="5_y6r58"]
 [ext_resource type="FontFile" uid="uid://cu21v3l257t3x" path="res://fonts/Paquito-Regular.otf" id="6_hbat2"]
@@ -22,9 +23,9 @@
 [ext_resource type="Texture2D" uid="uid://takjl1xjf47b" path="res://assets/interface/cards/artist.png" id="20_7oehq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pmkl8"]
-content_margin_bottom = 52.0
+content_margin_bottom = 44.0
 texture = ExtResource("5_y6r58")
-texture_margin_top = 39.0
+texture_margin_top = 29.0
 region_rect = Rect2(0, 50, 719, 346)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0v6kw"]
@@ -71,6 +72,7 @@ offset_bottom = 1020.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_dk4n7")
+texture = ExtResource("3_1vuvb")
 expand_mode = 1
 stretch_mode = 5
 
@@ -96,10 +98,9 @@ layout_mode = 2
 alignment = 1
 
 [node name="DescriptionMargin" type="MarginContainer" parent="DescriptionPanel/DescriptionContents"]
-visible = false
 layout_mode = 2
-theme_override_constants/margin_left = 75
-theme_override_constants/margin_right = 75
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
 
 [node name="Description" type="Label" parent="DescriptionPanel/DescriptionContents/DescriptionMargin"]
 custom_minimum_size = Vector2(0.305, 0.54)
@@ -108,25 +109,23 @@ size_flags_stretch_ratio = 0.0
 theme = ExtResource("3_dk4n7")
 theme_override_colors/font_color = Color(0.196078, 0.180392, 0.164706, 1)
 theme_override_fonts/font = ExtResource("6_hbat2")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 28
+text = "The self-appointed archeologist of Scritterscrot."
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="FlourishMargin" type="MarginContainer" parent="DescriptionPanel/DescriptionContents"]
-visible = false
 layout_mode = 2
-theme_override_constants/margin_top = 18
-theme_override_constants/margin_bottom = 18
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_bottom = 7
 
 [node name="Flourish" type="TextureRect" parent="DescriptionPanel/DescriptionContents/FlourishMargin"]
-modulate = Color(0.537255, 0.498039, 0.458824, 1)
 self_modulate = Color(0.396, 0.149, 0.125, 1)
 layout_mode = 2
 texture = ExtResource("7_bjlcp")
 stretch_mode = 3
 
 [node name="SkillsContainer" type="HBoxContainer" parent="DescriptionPanel/DescriptionContents"]
-visible = false
 layout_mode = 2
 alignment = 1
 
@@ -145,8 +144,8 @@ size_flags_stretch_ratio = 0.0
 theme = ExtResource("3_dk4n7")
 theme_override_colors/font_color = Color(0.196078, 0.180392, 0.164706, 1)
 theme_override_fonts/font = ExtResource("8_xvqhj")
-theme_override_font_sizes/font_size = 30
-text = "Radiance"
+theme_override_font_sizes/font_size = 28
+text = "Archeology"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -154,7 +153,6 @@ vertical_alignment = 1
 layout_mode = 2
 
 [node name="Skill1" type="MarginContainer" parent="DescriptionPanel/DescriptionContents/SkillsContainer"]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 42
 theme_override_constants/margin_right = 42
@@ -169,7 +167,7 @@ size_flags_stretch_ratio = 0.0
 theme = ExtResource("3_dk4n7")
 theme_override_colors/font_color = Color(0.196078, 0.180392, 0.164706, 1)
 theme_override_fonts/font = ExtResource("8_xvqhj")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 28
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -177,7 +175,6 @@ vertical_alignment = 1
 layout_mode = 2
 
 [node name="Skill2" type="MarginContainer" parent="DescriptionPanel/DescriptionContents/SkillsContainer"]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 42
 theme_override_constants/margin_right = 42
@@ -192,7 +189,7 @@ size_flags_stretch_ratio = 0.0
 theme = ExtResource("3_dk4n7")
 theme_override_colors/font_color = Color(0.196078, 0.180392, 0.164706, 1)
 theme_override_fonts/font = ExtResource("8_xvqhj")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 28
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -202,8 +199,8 @@ layout_mode = 2
 [node name="EffectMargin" type="MarginContainer" parent="DescriptionPanel/DescriptionContents"]
 visible = false
 layout_mode = 2
-theme_override_constants/margin_left = 75
-theme_override_constants/margin_right = 75
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
 
 [node name="Effect" type="Label" parent="DescriptionPanel/DescriptionContents/EffectMargin"]
 custom_minimum_size = Vector2(0.305, 0.54)
@@ -212,7 +209,7 @@ size_flags_stretch_ratio = 0.0
 theme = ExtResource("3_dk4n7")
 theme_override_colors/font_color = Color(0.196078, 0.180392, 0.164706, 1)
 theme_override_fonts/font = ExtResource("19_n4mcp")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 28
 text = "A force to be reckoned with."
 horizontal_alignment = 1
 autowrap_mode = 3
@@ -238,10 +235,10 @@ texture = ExtResource("11_v3v0c")
 
 [node name="Defense" type="CenterContainer" parent="."]
 layout_mode = 2
-offset_left = 631.0
-offset_top = 845.0
-offset_right = 753.0
-offset_bottom = 924.0
+offset_left = 619.0
+offset_top = 89.0
+offset_right = 741.0
+offset_bottom = 168.0
 
 [node name="DefBack" type="TextureRect" parent="Defense"]
 layout_mode = 2
@@ -254,10 +251,10 @@ texture = ExtResource("13_rch4f")
 
 [node name="Attack" type="CenterContainer" parent="."]
 layout_mode = 2
-offset_left = -1.0
-offset_top = 840.0
-offset_right = 121.0
-offset_bottom = 919.0
+offset_left = 620.0
+offset_top = 9.0
+offset_right = 742.0
+offset_bottom = 88.0
 
 [node name="AtkBack" type="TextureRect" parent="Attack"]
 layout_mode = 2
@@ -271,19 +268,19 @@ texture = ExtResource("15_aosct")
 [node name="DefDiceWeight" parent="." instance=ExtResource("16_my5pp")]
 self_modulate = Color(0.396, 0.149, 0.125, 1)
 layout_mode = 0
-offset_left = 694.0
-offset_top = 865.0
-offset_right = 739.0
-offset_bottom = 897.0
+offset_left = 682.0
+offset_top = 109.0
+offset_right = 727.0
+offset_bottom = 141.0
 texture = ExtResource("15_h2la1")
 
 [node name="AtkDiceWeight" parent="." instance=ExtResource("16_my5pp")]
 self_modulate = Color(0.396, 0.149, 0.125, 1)
 layout_mode = 0
-offset_left = 52.0
-offset_top = 863.0
-offset_right = 97.0
-offset_bottom = 895.0
+offset_left = 673.0
+offset_top = 32.0
+offset_right = 718.0
+offset_bottom = 64.0
 texture = ExtResource("16_tlb30")
 
 [node name="BrainLevel" parent="." instance=ExtResource("9_w1k3v")]
@@ -325,7 +322,7 @@ theme = ExtResource("3_dk4n7")
 theme_override_colors/font_color = Color(0.945098, 0.882353, 0.835294, 1)
 theme_override_fonts/font = ExtResource("17_td55t")
 theme_override_font_sizes/font_size = 80
-text = "Zy'phus"
+text = "Flip"
 vertical_alignment = 1
 
 [node name="Era" type="Label" parent="."]
@@ -354,6 +351,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_0v6kw")
 
 [node name="OriginName" type="Label" parent="Origin"]
 layout_mode = 2
+text = "Emerald Garden"
 label_settings = SubResource("LabelSettings_ush7i")
 
 [node name="Artist" type="PanelContainer" parent="."]
@@ -374,5 +372,6 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_lvmdx")
 [node name="ArtistName" type="Label" parent="Artist"]
 layout_mode = 2
 size_flags_horizontal = 8
+text = "Mik Gabson"
 label_settings = SubResource("LabelSettings_ush7i")
 horizontal_alignment = 2

@@ -23,7 +23,12 @@ func render_card(card_data : Variant):
 	var has_effect : bool = card_data.effect != ""
 	var has_attack : bool = "attack" in card_data && card_data.attack != CardProperties.DiceClass.None
 	var has_defense : bool = "defense" in card_data && card_data.defense != CardProperties.DiceClass.None
-	var has_stats: bool = "brains" in card_data
+	var has_stats: bool = (
+		card_data.card_type == CardProperties.CardTypes.Character ||
+		card_data.card_type == CardProperties.CardTypes.Creature ||
+		card_data.card_type == CardProperties.CardTypes.Weapon ||
+		card_data.card_type == CardProperties.CardTypes.Attire ||
+		card_data.card_type == CardProperties.CardTypes.Accessory)
 	
 	# Toggle component visibility
 	$DescriptionPanel/DescriptionContents/FlourishMargin.visible = has_description && (has_skills || has_effect)

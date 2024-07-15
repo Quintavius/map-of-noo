@@ -48,11 +48,14 @@ func generate_cards(source, type):
 					"Weapon":
 						new_card.card_type = CardProperties.CardTypes.Weapon
 						new_card.attack = CardProperties.DiceClass[card_entry["Stat"]]
+						set_stats(new_card, card_entry)
 					"Attire":
 						new_card.card_type = CardProperties.CardTypes.Attire
 						new_card.defense = CardProperties.DiceClass[card_entry["Stat"]]
+						set_stats(new_card, card_entry)
 					"Accessory":
 						new_card.card_type = CardProperties.CardTypes.Accessory
+						set_stats(new_card, card_entry)
 					"Consumable":
 						new_card.card_type = CardProperties.CardTypes.Consumable
 					"Trap":
