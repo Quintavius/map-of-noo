@@ -1,8 +1,8 @@
 [gd_scene load_steps=26 format=3 uid="uid://ci3f5scnttag6"]
 
 [ext_resource type="Script" path="res://scripts/resources/CardRenderer.gd" id="1_op1ox"]
-[ext_resource type="Texture2D" uid="uid://boqrr8efx1257" path="res://assets/card_art/characters/Flip.png" id="3_1vuvb"]
 [ext_resource type="Theme" uid="uid://cvsrecu06my7j" path="res://theme.tres" id="3_dk4n7"]
+[ext_resource type="Texture2D" uid="uid://bl3m4dwqm81ra" path="res://assets/card_art/characters/Brubsh.png" id="3_mombf"]
 [ext_resource type="Texture2D" uid="uid://dlq156prrfvna" path="res://assets/interface/cards/description_box.png" id="5_y6r58"]
 [ext_resource type="FontFile" uid="uid://cu21v3l257t3x" path="res://fonts/Paquito-Regular.otf" id="6_hbat2"]
 [ext_resource type="Texture2D" uid="uid://dyue72j47gpgv" path="res://assets/interface/cards/flourish.png" id="7_bjlcp"]
@@ -72,7 +72,7 @@ offset_bottom = 1020.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_dk4n7")
-texture = ExtResource("3_1vuvb")
+texture = ExtResource("3_mombf")
 expand_mode = 1
 stretch_mode = 5
 
@@ -110,11 +110,12 @@ theme = ExtResource("3_dk4n7")
 theme_override_colors/font_color = Color(0.196078, 0.180392, 0.164706, 1)
 theme_override_fonts/font = ExtResource("6_hbat2")
 theme_override_font_sizes/font_size = 28
-text = "The self-appointed archeologist of Scritterscrot."
+text = "[Incoherent mumbling]"
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="FlourishMargin" type="MarginContainer" parent="DescriptionPanel/DescriptionContents"]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_top = 7
 theme_override_constants/margin_bottom = 7
@@ -126,6 +127,7 @@ texture = ExtResource("7_bjlcp")
 stretch_mode = 3
 
 [node name="SkillsContainer" type="HBoxContainer" parent="DescriptionPanel/DescriptionContents"]
+visible = false
 layout_mode = 2
 alignment = 1
 
@@ -322,7 +324,7 @@ theme = ExtResource("3_dk4n7")
 theme_override_colors/font_color = Color(0.945098, 0.882353, 0.835294, 1)
 theme_override_fonts/font = ExtResource("17_td55t")
 theme_override_font_sizes/font_size = 80
-text = "Flip"
+text = "Brubsh"
 vertical_alignment = 1
 
 [node name="Era" type="Label" parent="."]
