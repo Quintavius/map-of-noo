@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=3 uid="uid://datmjw8awnhq"]
+
+[ext_resource type="PackedScene" uid="uid://ci3f5scnttag6" path="res://scenes/card_renderer.tscn" id="1_bwe64"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6vjgj"]
+
+[node name="Table" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6vjgj")
+
+[node name="Hands" type="TabContainer" parent="."]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Own Hand" type="MarginContainer" parent="Hands"]
+layout_mode = 2
+
+[node name="HandLayout" type="HBoxContainer" parent="Hands/Own Hand"]
+layout_mode = 2
+
+[node name="TableMargin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="TableLayout" type="HBoxContainer" parent="TableMargin"]
+layout_mode = 2
+
+[node name="PartyScroll" type="ScrollContainer" parent="TableMargin/TableLayout"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PartyLayout" type="VBoxContainer" parent="TableMargin/TableLayout/PartyScroll"]
+layout_mode = 2
+
+[node name="CharacterMargin" type="MarginContainer" parent="TableMargin/TableLayout/PartyScroll/PartyLayout"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TableMargin/TableLayout/PartyScroll/PartyLayout/CharacterMargin"]
+layout_mode = 2
+
+[node name="CardRenderer" parent="TableMargin/TableLayout/PartyScroll/PartyLayout/CharacterMargin/HBoxContainer" instance=ExtResource("1_bwe64")]
+layout_mode = 2
+
+[node name="NPCScroll" type="ScrollContainer" parent="TableMargin/TableLayout"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PartyLayout" type="VBoxContainer" parent="TableMargin/TableLayout/NPCScroll"]
+layout_mode = 2
+
+[node name="CharacterMargin" type="MarginContainer" parent="TableMargin/TableLayout/NPCScroll/PartyLayout"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
